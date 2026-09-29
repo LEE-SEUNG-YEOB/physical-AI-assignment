@@ -1,0 +1,27 @@
+:root {
+  color-scheme: light;
+  font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #29231f;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-white: #ffffff;
+  --color-cream: #fff7f0;
+  --color-dark: #251d19;
+  --color-text: #29231f;
+  --color-muted: #685f59;
+  --color-brand: #c2410c;
+  --color-bright: #f97316;
+  --color-tint: #ffedd5;
+  --color-warning: #a16207;
+  --color-danger: #b91c1c;
+  --color-border: #e8ded7;
+  --color-focus: #8f2e08;
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-space: clamp(4.5rem, 9vw, 8.25rem);
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.75rem;
+  --header-height: 4.5rem;
+}
