@@ -167,112 +167,294 @@
   min-width: 0;
 }
 
-.page-hero-graphic {
-  width: 100%;
+.page-hero--features {
+  background: var(--color-dark);
+  color: var(--color-white);
 }
 
-.page-hero-graphic__surface {
+.page-hero--features .page-hero__grid {
+  align-items: end;
+}
+
+.page-hero--features .page-hero__copy > p:last-child {
+  color: #d9d0ca;
+}
+
+.page-hero--journey {
+  min-height: auto;
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+}
+
+.page-hero--journey .page-hero__grid,
+.page-hero--technology .page-hero__grid {
+  grid-template-columns: 1fr;
+}
+
+.page-hero--journey .page-hero__copy {
+  max-width: 58rem;
+}
+
+.page-hero--technology {
+  text-align: center;
+}
+
+.page-hero--technology .page-hero__copy,
+.page-hero--technology .page-hero__copy > p:last-child,
+.page-hero--technology .page-hero__visual {
+  margin-inline: auto;
+}
+
+.page-hero--technology .page-hero__visual {
+  width: min(100%, 52rem);
+}
+
+.page-hero--impact .page-hero__visual {
+  margin-right: clamp(-6rem, -5vw, -1rem);
+}
+
+.visual-panel {
   fill: var(--color-white);
   stroke: var(--color-border);
   stroke-width: 2;
 }
 
-.page-hero--dark .page-hero-graphic__surface {
+.visual-panel--dark {
   fill: #302621;
-  stroke: #604c42;
+  stroke: #6f574a;
 }
 
-.page-hero-graphic__route,
-.page-hero-graphic__echo,
-.page-hero-graphic__signal path {
-  fill: none;
-  stroke: var(--color-brand);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.page-hero--dark .page-hero-graphic__route,
-.page-hero--dark .page-hero-graphic__signal path {
-  stroke: var(--color-bright);
-}
-
-.page-hero-graphic__route {
-  stroke-width: 7;
-  stroke-dasharray: 12 10;
-  animation: routeFlow 4.8s linear infinite;
-}
-
-.page-hero-graphic__echo {
-  stroke: #d8c8be;
-  stroke-width: 3;
-  stroke-dasharray: 3 12;
-}
-
-.page-hero--dark .page-hero-graphic__echo {
-  stroke: #80685b;
-}
-
-.page-hero-graphic__nodes circle {
-  fill: var(--color-white);
-  stroke: var(--color-brand);
-  stroke-width: 3;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: nodeSignal 2.8s ease-in-out infinite;
-}
-
-.page-hero-graphic__nodes circle:nth-child(2) { animation-delay: 180ms; }
-.page-hero-graphic__nodes circle:nth-child(3) { animation-delay: 360ms; }
-.page-hero-graphic__nodes circle:nth-child(4) { animation-delay: 540ms; }
-
-.page-hero--dark .page-hero-graphic__nodes circle {
-  fill: var(--color-dark);
-  stroke: var(--color-bright);
-}
-
-.page-hero-graphic__signal path {
-  stroke-width: 3;
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: sensorPulse 2.2s ease-in-out infinite;
-}
-
-.page-hero-graphic text {
-  fill: var(--color-brand);
+.visual-kicker {
+  fill: var(--color-bright);
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
 }
 
-.page-hero--dark .page-hero-graphic text {
+.safety-decision-graphic,
+.technology-network-graphic,
+.impact-orbit-graphic {
+  width: 100%;
+}
+
+.safety-stage__ring,
+.safety-stage__core,
+.safety-stage__diamond {
+  fill: none;
+  stroke: var(--color-bright);
+  stroke-width: 3;
+}
+
+.safety-stage__core {
   fill: var(--color-bright);
 }
 
-.page-hero-graphic__caption {
-  fill: var(--color-text) !important;
-  font-size: 14px !important;
-  letter-spacing: 0 !important;
+.safety-stage__wave {
+  fill: none;
+  stroke: #ffc08f;
+  stroke-linecap: round;
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: sensorPulse 2.8s ease-in-out infinite;
 }
 
-.page-hero--dark .page-hero-graphic__caption {
-  fill: var(--color-white) !important;
+.safety-stage__check,
+.safety-actions path {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
 }
 
-.page-hero-graphic--features .page-hero-graphic__signal path {
-  animation-duration: 1.7s;
+.safety-stage text,
+.safety-actions text {
+  fill: var(--color-white);
+  font-size: 13px;
+  font-weight: 800;
+  text-anchor: middle;
 }
 
-.page-hero-graphic--journey .page-hero-graphic__route {
-  animation-duration: 3.5s;
+.safety-decision-graphic__connector {
+  fill: none;
+  stroke: #8e7466;
+  stroke-dasharray: 7 8;
+  stroke-width: 2;
 }
 
-.page-hero-graphic--technology .page-hero-graphic__nodes circle {
-  animation-duration: 2s;
+.safety-actions__stop {
+  fill: var(--color-danger);
 }
 
-.page-hero-graphic--impact .page-hero-graphic__nodes circle {
-  animation-name: impactNode;
-  animation-duration: 3.4s;
+.safety-actions__avoid {
+  stroke: var(--color-bright) !important;
+  stroke-dasharray: 8 7;
+  animation: routeFlow 3.2s linear infinite;
+}
+
+.safety-status rect {
+  fill: #3d302a;
+  stroke: #6f574a;
+}
+
+.safety-status text {
+  fill: #e8ded7;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.journey-rail-graphic {
+  position: relative;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-block: 1px solid var(--color-border);
+  background: linear-gradient(90deg, transparent, var(--color-cream) 30%, var(--color-cream) 70%, transparent);
+}
+
+.journey-rail-graphic ol {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.journey-rail-graphic ol::before {
+  content: "";
+  position: absolute;
+  top: 1.35rem;
+  bottom: 1.35rem;
+  left: 1.35rem;
+  width: 3px;
+  background: #d5c7bd;
+}
+
+.journey-rail-graphic li {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.journey-rail-graphic__number {
+  position: relative;
+  z-index: 1;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-brand);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-brand);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.journey-rail-graphic__traveler {
+  position: absolute;
+  z-index: 2;
+  top: 3.2rem;
+  left: calc(clamp(2rem, 5vw, 3.5rem) + 1rem);
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  background: var(--color-brand);
+  animation: journeyTravelVertical 7s ease-in-out infinite;
+}
+
+.technology-network-graphic__orbit {
+  fill: none;
+  stroke: #604c42;
+  stroke-dasharray: 4 10;
+  stroke-width: 2;
+}
+
+.technology-node__line {
+  fill: none;
+  stroke: #80685b;
+  stroke-dasharray: 5 7;
+  stroke-width: 2;
+}
+
+.technology-node circle {
+  fill: #302621;
+  stroke: var(--color-bright);
+  stroke-width: 2;
+  animation: technologyNode 3.6s ease-in-out infinite var(--node-delay);
+}
+
+.technology-node text,
+.technology-core text {
+  fill: var(--color-white);
+  font-size: 12px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.technology-core circle:first-child {
+  fill: #5a2d1b;
+  stroke: var(--color-bright);
+  stroke-width: 2;
+}
+
+.technology-core circle:nth-child(2) {
+  fill: none;
+  stroke: #ffb77c;
+  stroke-dasharray: 7 7;
+  animation: coreRotate 18s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.technology-core text:first-of-type {
+  fill: var(--color-bright);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.impact-orbit {
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: impactFloat 5.5s ease-in-out infinite;
+}
+
+.impact-orbit--user {
+  fill: rgb(249 115 22 / 13%);
+  stroke: var(--color-brand);
+}
+
+.impact-orbit--city {
+  fill: rgb(161 98 7 / 10%);
+  stroke: var(--color-warning);
+  animation-delay: 350ms;
+}
+
+.impact-orbit--place {
+  fill: rgb(104 95 89 / 9%);
+  stroke: #887970;
+  animation-delay: 700ms;
+}
+
+.impact-orbit__label {
+  fill: var(--color-text);
+  font-size: 16px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.impact-orbit__core circle {
+  fill: var(--color-brand);
+}
+
+.impact-orbit__core text {
+  fill: var(--color-white);
+  font-size: 14px;
+  font-weight: 800;
+  text-anchor: middle;
 }
 
 .page-next {
@@ -680,7 +862,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1.25rem;
-  padding-block: 1.5rem;
+  padding: 1.5rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1145,9 +1327,28 @@
   50% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes impactNode {
-  0%, 20% { opacity: 0.45; transform: scale(0.82); }
-  55%, 100% { opacity: 1; transform: scale(1); }
+@keyframes journeyTravelVertical {
+  0%, 10% { transform: translateY(0); }
+  90%, 100% { transform: translateY(calc(100% + 12rem)); }
+}
+
+@keyframes journeyTravelHorizontal {
+  0%, 10% { transform: translateX(0); }
+  90%, 100% { transform: translateX(min(76vw, 56rem)); }
+}
+
+@keyframes technologyNode {
+  0%, 100% { fill: #302621; }
+  45% { fill: #63331f; }
+}
+
+@keyframes coreRotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes impactFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
 }
 
 @media (min-width: 640px) {
@@ -1171,6 +1372,7 @@
 
   .connected-item {
     grid-template-columns: 1fr;
+    padding: 2rem;
     border-right: 1px solid var(--color-border);
   }
 
@@ -1192,6 +1394,46 @@
 
   .page-next__inner {
     grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .page-hero--features .page-hero__grid {
+    grid-template-columns: minmax(18rem, 0.72fr) minmax(28rem, 1.28fr);
+  }
+
+  .page-hero--journey .page-hero__grid,
+  .page-hero--technology .page-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-rail-graphic {
+    padding-block: 3.5rem;
+  }
+
+  .journey-rail-graphic ol {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .journey-rail-graphic ol::before {
+    top: 1.35rem;
+    right: 10%;
+    bottom: auto;
+    left: 10%;
+    width: auto;
+    height: 3px;
+  }
+
+  .journey-rail-graphic li {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.85rem;
+    text-align: center;
+  }
+
+  .journey-rail-graphic__traveler {
+    top: calc(3.5rem + 1rem);
+    left: 10%;
+    animation-name: journeyTravelHorizontal;
   }
 
   .hero__visual {
@@ -1279,6 +1521,11 @@
     margin-inline: -0.75rem;
   }
 
+  .page-hero--impact .page-hero__visual {
+    margin-right: -2rem;
+    margin-left: -0.75rem;
+  }
+
   .hero__visual {
     margin-inline: -1rem;
   }
@@ -1296,10 +1543,16 @@
 
 @media (prefers-reduced-motion: reduce) {
   .graphic-route--animated,
-  .page-hero-graphic__route,
-  .page-hero-graphic__nodes circle,
-  .page-hero-graphic__signal path,
   .page-transition {
+    animation: none;
+  }
+
+  .safety-stage__wave,
+  .safety-actions__avoid,
+  .journey-rail-graphic__traveler,
+  .technology-node circle,
+  .technology-core circle,
+  .impact-orbit {
     animation: none;
   }
 

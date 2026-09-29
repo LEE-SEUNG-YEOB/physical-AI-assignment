@@ -7,11 +7,12 @@ interface PageHeroProps {
   description: string
   visual: ReactNode
   tone?: 'light' | 'cream' | 'dark'
+  variant: 'features' | 'journey' | 'technology' | 'impact'
 }
 
-export function PageHero({ eyebrow, titleLines, description, visual, tone = 'light' }: PageHeroProps) {
+export function PageHero({ eyebrow, titleLines, description, visual, tone = 'light', variant }: PageHeroProps) {
   return (
-    <section className={`page-hero page-hero--${tone}`} aria-labelledby="page-title">
+    <section className={`page-hero page-hero--${tone} page-hero--${variant}`} aria-labelledby="page-title">
       <div className="container page-hero__grid">
         <RevealOnScroll className="page-hero__copy">
           <p className="eyebrow">{eyebrow}</p>

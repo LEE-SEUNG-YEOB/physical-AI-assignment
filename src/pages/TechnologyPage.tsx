@@ -1,7 +1,6 @@
-import { PageHeroGraphic } from '../components/graphics/PageHeroGraphic'
+import { TechnologyNetworkGraphic } from '../components/graphics/TechnologyNetworkGraphic'
 import { PageHero } from '../components/layout/PageHero'
 import { PageNextLink } from '../components/layout/PageNextLink'
-import { ConnectedServiceSection } from '../sections/ConnectedServiceSection'
 import { TechnologySection } from '../sections/TechnologySection'
 
 export function TechnologyPage() {
@@ -9,13 +8,13 @@ export function TechnologyPage() {
     <>
       <PageHero
         eyebrow="CONNECTED TECHNOLOGY"
-        titleLines={['환경을 이해하고,', '안전한 행동을 결정합니다']}
-        description="환경 감지, 움직임 예측, 공간 판단, 접근성 경로 계획과 이동 제어가 하나의 판단 흐름으로 연결됩니다."
-        visual={<PageHeroGraphic variant="technology" />}
+        titleLines={['여섯 기술이 하나의', '안전 판단을 만듭니다']}
+        description="센서 입력에서 객체 이해, 공간 판단, 경로 계획과 이동 제어까지 각 기술이 중앙의 안전 판단을 중심으로 정보를 주고받습니다."
+        visual={<TechnologyNetworkGraphic />}
         tone="dark"
+        variant="technology"
       />
       <TechnologySection />
-      <ConnectedServiceSection />
       <PageNextLink
         eyebrow="NEXT · IMPACT"
         titleLines={['기술의 가치는', '실제 이동 경험에서 확인해야 합니다']}

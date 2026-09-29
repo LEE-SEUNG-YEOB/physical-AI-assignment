@@ -1,4 +1,4 @@
-import { PageHeroGraphic } from '../components/graphics/PageHeroGraphic'
+import { SafetyDecisionGraphic } from '../components/graphics/SafetyDecisionGraphic'
 import { PageHero } from '../components/layout/PageHero'
 import { PageNextLink } from '../components/layout/PageNextLink'
 import { FeaturesSection } from '../sections/FeaturesSection'
@@ -10,10 +10,11 @@ export function FeaturesPage() {
     <>
       <PageHero
         eyebrow="FEATURES & SAFE MOTION"
-        titleLines={['위험을 먼저 살피고,', '안전한 행동으로 이어갑니다']}
-        description="모두길은 주변 상황과 통과 가능성을 함께 판단합니다. 위험이 커지면 먼저 감속하고, 정지하거나 안전한 공간으로 우회합니다."
-        visual={<PageHeroGraphic variant="features" />}
-        tone="cream"
+        titleLines={['보고, 판단하고,', '안전하게 움직입니다']}
+        description="주변을 감지한 정보는 공간 판단을 거쳐 감속, 정지와 우회 행동으로 이어집니다. 모두길의 핵심 기능을 세 단계의 안전 흐름으로 보여줍니다."
+        visual={<SafetyDecisionGraphic />}
+        tone="dark"
+        variant="features"
       />
       <FeaturesSection />
       <SafetyProcessSection />
