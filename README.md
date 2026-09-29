@@ -36,5 +36,3 @@ npm run build
 - `/technology`: 핵심 기술
 - `/difference`: 유사 서비스와 모두길의 차별점, 단계적 구현 전략
 - `/impact`: 기대 효과
-
-운영 서버에 배포할 때는 각 경로의 새로고침 요청을 `index.html`로 연결하는 SPA fallback 설정이 필요합니다.
