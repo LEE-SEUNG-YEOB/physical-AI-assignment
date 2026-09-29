@@ -38,8 +38,9 @@ export type IconName =
   | 'society'
 
 export interface NavigationItem {
-  id: SectionId
+  path: string
   label: string
+  end?: boolean
 }
 
 export interface FeatureItem {

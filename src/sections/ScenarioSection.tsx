@@ -10,7 +10,7 @@ export function ScenarioSection() {
           <SectionHeading
             id="scenario-title"
             eyebrow="USER JOURNEY"
-            title="공원에서 주민센터까지 이어지는 이동"
+            titleLines={['공원에서 주민센터까지', '이어지는 이동']}
             description="시각장애인 사용자의 대표 이동 상황을 통해 실외 출발부터 시설 내부 목적지까지 이어지는 지원 과정을 살펴봅니다."
           />
         </RevealOnScroll>

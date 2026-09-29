@@ -12,7 +12,7 @@ export function ProblemSection() {
           <SectionHeading
             id="problem-title"
             eyebrow="WHY MODUGIL"
-            title="같은 길도 누구에게나 같은 길은 아닙니다"
+            titleLines={['같은 길도 누구에게나', '같은 길은 아닙니다']}
             description="지도에 표시된 길과 사용자가 실제로 통과할 수 있는 길은 다를 수 있습니다. 모두길은 장소마다 끊긴 정보를 하나의 안전 행동으로 연결하려 합니다."
           />
         </RevealOnScroll>

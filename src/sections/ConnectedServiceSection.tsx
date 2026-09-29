@@ -11,7 +11,7 @@ export function ConnectedServiceSection() {
           <SectionHeading
             id="connected-title"
             eyebrow="CONNECTED MOBILITY"
-            title="개인과 도시, 시설이 함께 이동을 돕습니다"
+            titleLines={['개인과 도시, 시설이 함께', '이동을 돕습니다']}
             description="사용자 곁의 기기, 도시 인프라와 공공시설 정보가 하나의 이동 과정 안에서 협력합니다."
           />
         </RevealOnScroll>

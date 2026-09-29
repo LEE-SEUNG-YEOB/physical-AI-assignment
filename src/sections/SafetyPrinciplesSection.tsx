@@ -11,7 +11,7 @@ export function SafetyPrinciplesSection() {
           <SectionHeading
             id="principles-title"
             eyebrow="SAFETY PRINCIPLES"
-            title="불확실할 때는 멈추고, 결정권은 사용자에게 둡니다"
+            titleLines={['불확실할 때는 멈추고,', '결정권은 사용자에게 둡니다']}
             description="모두길은 이동 편의보다 안전과 자기결정권을 먼저 고려하며, 필요한 순간에만 개입하는 보조 서비스를 지향합니다."
           />
         </RevealOnScroll>

@@ -11,7 +11,7 @@ export function UserSupportSection() {
           <SectionHeading
             id="support-title"
             eyebrow="PERSONALIZED SUPPORT"
-            title="같은 기술도 사용자에 맞게 다르게 작동합니다"
+            titleLines={['같은 기술도 사용자에 맞게', '다르게 작동합니다']}
             description="사용자의 이동 조건에 따라 더 중요하게 확인할 정보와 안내 방법을 달리합니다. 사용자는 언제든 보조 수준을 바꾸거나 종료할 수 있습니다."
           />
         </RevealOnScroll>

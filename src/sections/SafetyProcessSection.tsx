@@ -12,7 +12,7 @@ export function SafetyProcessSection() {
           <SectionHeading
             id="safety-title"
             eyebrow="SAFE MOTION CONTROL"
-            title="사람을 발견한 순간부터 안전한 이동까지"
+            titleLines={['사람을 발견한 순간부터', '안전한 이동까지']}
             description="모두길은 사람을 발견하면 먼저 속도를 낮추고, 거리와 공간을 확인한 뒤 정지하거나 우회합니다. 판단이 불확실할 때는 이동을 강행하지 않습니다."
             inverse
           />

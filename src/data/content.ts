@@ -10,12 +10,11 @@ import type {
 } from '../types/content'
 
 export const navigationItems = [
-  { id: 'intro', label: '서비스 소개' },
-  { id: 'features', label: '주요 기능' },
-  { id: 'safety-process', label: '안전 행동' },
-  { id: 'usage', label: '이용 과정' },
-  { id: 'technology', label: '핵심 기술' },
-  { id: 'impact', label: '기대 효과' },
+  { path: '/', label: '서비스 소개', end: true },
+  { path: '/features', label: '주요 기능·안전 행동', end: true },
+  { path: '/journey', label: '이용 과정', end: true },
+  { path: '/technology', label: '핵심 기술', end: true },
+  { path: '/impact', label: '기대 효과', end: true },
 ] as const satisfies readonly NavigationItem[]
 
 export const problemCards = [

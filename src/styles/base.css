@@ -52,6 +52,15 @@ h3 {
   line-height: 1.18;
   letter-spacing: -0.035em;
   text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.title-line {
+  display: block;
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 p {
@@ -61,6 +70,11 @@ p {
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 4px;
+}
+
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus {
+  outline: none;
 }
 
 .section--dark :focus-visible,

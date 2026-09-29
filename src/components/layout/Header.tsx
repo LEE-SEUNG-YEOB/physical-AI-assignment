@@ -1,19 +1,21 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigationItems } from '../../data/content'
-import { useActiveSection } from '../../hooks/useActiveSection'
-
-const sectionIds = navigationItems.map((item) => item.id)
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null)
-  const activeId = useActiveSection(sectionIds)
+  const location = useLocation()
 
   useEffect(() => {
     if (isOpen) firstMobileLinkRef.current?.focus()
   }, [isOpen])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.pathname])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -36,20 +38,20 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="brand" href="#intro" aria-label="모두길 처음으로">
+        <Link className="brand" to="/" aria-label="모두길 서비스 소개로">
           <span className="brand__mark" aria-hidden="true">M</span>
           <span><strong>모두길</strong><small>MODUGIL</small></span>
-        </a>
+        </Link>
 
         <nav className="desktop-nav" aria-label="주요 메뉴">
           {navigationItems.map((item) => (
-            <a
-              href={`#${item.id}`}
-              aria-current={activeId === item.id ? 'location' : undefined}
-              key={item.id}
+            <NavLink
+              to={item.path}
+              end={item.end}
+              key={item.path}
             >
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -68,18 +70,18 @@ export function Header() {
 
       <nav id="mobile-navigation" className="mobile-nav" aria-label="모바일 주요 메뉴" hidden={!isOpen}>
         {navigationItems.map((item, index) => (
-          <a
+          <NavLink
             ref={index === 0 ? firstMobileLinkRef : undefined}
-            href={`#${item.id}`}
-            aria-current={activeId === item.id ? 'location' : undefined}
+            to={item.path}
+            end={item.end}
             onClick={() => {
               setIsOpen(false)
               requestAnimationFrame(() => menuButtonRef.current?.focus())
             }}
-            key={item.id}
+            key={item.path}
           >
             {item.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </header>

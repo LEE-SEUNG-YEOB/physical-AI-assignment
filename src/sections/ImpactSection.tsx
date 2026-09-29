@@ -11,7 +11,7 @@ export function ImpactSection() {
           <SectionHeading
             id="impact-title"
             eyebrow="EXPECTED IMPACT"
-            title="도시 이동의 끊김을 줄이는 변화"
+            titleLines={['도시 이동의 끊김을 줄이는', '변화']}
             description="모두길은 이용자의 판단 부담을 줄이고, 도시와 시설이 접근성 문제를 더 잘 파악할 수 있도록 돕는 것을 목표로 합니다."
           />
         </RevealOnScroll>
