@@ -12,9 +12,9 @@ export function ServicePage() {
       <ConnectedServiceSection />
       <UserSupportSection />
       <PageNextLink
-        eyebrow="NEXT · FEATURES & SAFETY"
+        eyebrow="NEXT · FEATURES"
         titleLines={['모두길은 주변 정보를 어떻게', '실제 행동으로 바꿀까요?']}
-        label="주요 기능과 안전 행동 보기"
+        label="주요 기능 보기"
         to="/features"
       />
     </>

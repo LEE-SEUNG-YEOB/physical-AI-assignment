@@ -11,9 +11,10 @@ import type {
 
 export const navigationItems = [
   { path: '/', label: '서비스 소개', end: true },
-  { path: '/features', label: '주요 기능·안전 행동', end: true },
+  { path: '/features', label: '주요 기능', end: true },
   { path: '/journey', label: '이용 과정', end: true },
   { path: '/technology', label: '핵심 기술', end: true },
+  { path: '/difference', label: '차별점', end: true },
   { path: '/impact', label: '기대 효과', end: true },
 ] as const satisfies readonly NavigationItem[]
 

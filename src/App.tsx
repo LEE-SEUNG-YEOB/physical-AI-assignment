@@ -3,6 +3,7 @@ import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { SkipLink } from './components/layout/SkipLink'
 import { ScrollToTop } from './components/routing/ScrollToTop'
+import { DifferencePage } from './pages/DifferencePage'
 import { FeaturesPage } from './pages/FeaturesPage'
 import { ImpactPage } from './pages/ImpactPage'
 import { JourneyPage } from './pages/JourneyPage'
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/journey" element={<JourneyPage />} />
             <Route path="/technology" element={<TechnologyPage />} />
+            <Route path="/difference" element={<DifferencePage />} />
             <Route path="/impact" element={<ImpactPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

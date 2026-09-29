@@ -7,7 +7,7 @@ interface PageHeroProps {
   description: string
   visual: ReactNode
   tone?: 'light' | 'cream' | 'dark'
-  variant: 'features' | 'journey' | 'technology' | 'impact'
+  variant: 'features' | 'journey' | 'technology' | 'difference' | 'impact'
 }
 
 export function PageHero({ eyebrow, titleLines, description, visual, tone = 'light', variant }: PageHeroProps) {

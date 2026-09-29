@@ -16,10 +16,10 @@ export function TechnologyPage() {
       />
       <TechnologySection />
       <PageNextLink
-        eyebrow="NEXT · IMPACT"
-        titleLines={['기술의 가치는', '실제 이동 경험에서 확인해야 합니다']}
-        label="기대 효과와 검증 기준 보기"
-        to="/impact"
+        eyebrow="NEXT · DIFFERENCE"
+        titleLines={['기술을 연결하면', '무엇이 달라질까요?']}
+        label="모두길의 차별점 보기"
+        to="/difference"
       />
     </>
   )
