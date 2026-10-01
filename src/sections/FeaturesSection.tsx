@@ -11,8 +11,8 @@ export function FeaturesSection() {
           <SectionHeading
             id="features-title"
             eyebrow="CORE FEATURES"
-            titleLines={['알림에서 실제 행동으로', '이어집니다']}
-            description="주변을 인식하고 통과 가능성을 판단한 뒤, 이동이 끝나는 순간까지 필요한 행동을 연결합니다."
+            titleLines={['다섯 기능이 판단을', '실제 행동으로 바꿉니다']}
+            description="기술명보다 사용자가 마주치는 상황, 휠체어가 확인하는 정보와 실제 행동의 순서로 설명합니다."
           />
         </RevealOnScroll>
         <div className="card-grid card-grid--three">

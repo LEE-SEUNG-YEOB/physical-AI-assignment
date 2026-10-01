@@ -9,8 +9,8 @@ export function JourneyPage() {
     <>
       <PageHero
         eyebrow="HOW MODUGIL WORKS"
-        titleLines={['선택한 목적지까지,', '이동의 흐름을 잇습니다']}
-        description="목적지 선택부터 접근 가능한 경로 확인, 실시간 이동 대응과 시설 내부 도착까지 사용자가 경험하는 순서를 따라갑니다."
+        titleLines={['공원 입구에서 복지관까지,', '확인된 길로 이어갑니다']}
+        description="탑승과 정지 입력 확인부터 경로·배터리 확인, 공사 우회와 입구 앞 도착까지 약 700m 생활권 이동의 가정을 따라갑니다."
         visual={<JourneyRailGraphic />}
         variant="journey"
       />

@@ -11,8 +11,8 @@ export function ImpactSection() {
           <SectionHeading
             id="impact-title"
             eyebrow="EXPECTED IMPACT"
-            titleLines={['도시 이동의 끊김을 줄이는', '변화']}
-            description="모두길은 이용자의 판단 부담을 줄이고, 도시와 시설이 접근성 문제를 더 잘 파악할 수 있도록 돕는 것을 목표로 합니다."
+            titleLines={['사용자와 지원자에게', '기대하는 변화']}
+            description="성과를 이미 달성한 것처럼 말하지 않고, 목적지 이동과 운영 과정에서 기대하는 변화를 이용자별로 설명합니다."
           />
         </RevealOnScroll>
         <div className="card-grid card-grid--four">
@@ -23,8 +23,8 @@ export function ImpactSection() {
           ))}
         </div>
         <RevealOnScroll className="impact-note">
-          <p><strong>향후 실증에서 확인할 항목</strong></p>
-          <p>안전 정지, 장애물 회피, 접근 가능한 경로 완주, 실외부터 시설 내부까지의 연속 안내와 사용자 개입 경험을 확인합니다. 확인되지 않은 수치나 성과는 제시하지 않습니다.</p>
+          <p><strong>운영 원칙</strong></p>
+          <p>안전 정지와 사용자 제어권을 먼저 두고, 확인된 운행 범위와 정보의 최신성을 지킵니다. 배터리·충전과 필요한 도움까지 이동의 연속성으로 관리합니다.</p>
         </RevealOnScroll>
       </div>
     </section>

@@ -36,6 +36,11 @@ export type IconName =
   | 'city'
   | 'institution'
   | 'society'
+  | 'battery'
+  | 'cpu'
+  | 'database'
+  | 'plug'
+  | 'gauge'
 
 export interface NavigationItem {
   path: string
@@ -48,7 +53,8 @@ export interface FeatureItem {
   icon: IconName
   title: string
   situation: string
-  description: string
+  judgment: string
+  action: string
   tags?: readonly string[]
 }
 
@@ -61,6 +67,7 @@ export interface ProcessStep {
 
 export interface ScenarioStep {
   number: string
+  label: string
   place: string
   situation: string
   checks: string
@@ -69,6 +76,7 @@ export interface ScenarioStep {
 
 export interface SupportProfile {
   icon: IconName
+  priority: '1차 핵심' | '2차 대상' | '확장 대상'
   title: string
   focus: string
   interface: string
@@ -77,6 +85,34 @@ export interface SupportProfile {
 export interface TechnologyItem {
   eyebrow: string
   icon: IconName
+  title: string
+  description: string
+}
+
+export interface TechnologyDetailItem {
+  name: string
+  role: string
+  use: string
+  limit: string
+}
+
+export interface TechnologyDetailGroup {
+  id: string
+  eyebrow: string
+  title: string
+  description: string
+  items: readonly TechnologyDetailItem[]
+}
+
+export interface DataFlowStep {
+  number: string
+  title: string
+  description: string
+}
+
+export interface OperationModel {
+  number: string
+  label: string
   title: string
   description: string
 }

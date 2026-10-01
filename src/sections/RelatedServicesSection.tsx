@@ -10,8 +10,8 @@ export function RelatedServicesSection() {
           <SectionHeading
             id="related-services-title"
             eyebrow="RELATED SERVICES"
-            titleLines={['각 서비스의 강점 위에', '연결의 관점을 더합니다']}
-            description="유사 사례는 각자의 환경에서 중요한 이동 지원을 제공합니다. 모두길은 이를 대체하기보다, 서로 분리된 장치와 공간을 연결하는 서비스 구조를 제안합니다."
+            titleLines={['이미 존재하는 기술과', '적용 범위를 구분합니다']}
+            description="일반 전동휠체어, 시설 내 자율 이동과 연구 사례의 범위를 넓혀 해석하지 않고 모두길의 기획 초점을 비교합니다."
           />
         </RevealOnScroll>
         <div className="service-comparison" role="list">
@@ -24,7 +24,7 @@ export function RelatedServicesSection() {
                   <p>{service.focus}</p>
                 </div>
                 <div>
-                  <span>모두길이 연결하는 범위</span>
+                  <span>모두길의 기획 초점</span>
                   <p>{service.extension}</p>
                 </div>
               </article>
@@ -32,7 +32,7 @@ export function RelatedServicesSection() {
           ))}
         </div>
         <RevealOnScroll className="comparison-note">
-          <p>기획서에 정리된 사례를 기준으로 서비스 범위를 비교했습니다. 비교 목적은 기술의 우열을 정하는 것이 아니라 모두길이 제안하는 연결 범위를 설명하는 데 있습니다.</p>
+          <p>세계 최초나 더 안전·정확하다는 우위를 주장하지 않습니다. 연구와 시설 내 서비스의 적용 결과를 일반 실외 도심의 검증으로 확대하지 않습니다.</p>
         </RevealOnScroll>
       </div>
     </section>

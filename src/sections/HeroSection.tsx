@@ -8,23 +8,23 @@ export function HeroSection() {
     <section className="hero section" id="intro" aria-labelledby="hero-title">
       <div className="container hero__grid">
         <RevealOnScroll className="hero__copy">
-          <p className="eyebrow">PHYSICAL AI MOBILITY SERVICE</p>
+          <p className="eyebrow">PHYSICAL AI SMART WHEELCHAIR</p>
           <h1 id="hero-title" tabIndex={-1}>
-            <span className="title-line">도시가 먼저 보고,</span>
-            <span className="title-line">AI가 함께 걷는</span>
-            <span className="title-line">이동 지원 서비스</span>
+            <span className="title-line">목적지를 선택하면,</span>
+            <span className="title-line">이동의 판단을 돕는</span>
+            <span className="title-line">휠체어</span>
           </h1>
           <p className="hero__description">
-            모두길은 보도와 횡단보도, 공공시설을 하나의 이동 경험으로 연결합니다.
-            위험 인식을 감속·정지·우회 같은 실제 행동으로 잇는 도시형 Physical AI 서비스 기획입니다.
+            모두길은 보도와 공공시설 접근로에서 주변 환경을 살피고, 통과할 수 있는 길을 선택하는 자율주행 스마트휠체어 아이디어입니다.
+            자체 센서와 공사·차단 정보를 함께 활용해 감속·정지·우회로 이어지는 이동을 제안합니다.
           </p>
           <div className="hero__actions">
-            <Link className="text-link" to="/features#safety-process">
-              서비스 작동 방식 보기 <ArrowRight aria-hidden="true" size={18} />
+            <Link className="text-link" to="/features">
+              주요 기능 보기 <ArrowRight aria-hidden="true" size={18} />
             </Link>
-            <a className="scroll-cue" href="#problem">
-              아래로 살펴보기 <ArrowDown aria-hidden="true" size={18} />
-            </a>
+            <Link className="scroll-cue" to="/journey">
+              이용 과정 보기 <ArrowDown aria-hidden="true" size={18} />
+            </Link>
           </div>
         </RevealOnScroll>
         <RevealOnScroll className="hero__visual" delay={100}>

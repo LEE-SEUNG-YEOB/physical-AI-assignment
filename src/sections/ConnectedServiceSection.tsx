@@ -10,9 +10,9 @@ export function ConnectedServiceSection() {
         <RevealOnScroll>
           <SectionHeading
             id="connected-title"
-            eyebrow="CONNECTED MOBILITY"
-            titleLines={['개인과 도시, 시설이 함께', '이동을 돕습니다']}
-            description="사용자 곁의 기기, 도시 인프라와 공공시설 정보가 하나의 이동 과정 안에서 협력합니다."
+            eyebrow="ONE WHEELCHAIR SYSTEM"
+            titleLines={['기체의 판단과 필요한 정보가', '목적지 이동으로 이어집니다']}
+            description="현장의 안전은 기체가 최종 확인하고, 앞 구간의 변화와 접근성 정보는 경로 판단을 보완합니다."
           />
         </RevealOnScroll>
         <RevealOnScroll className="network-visual">

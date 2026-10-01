@@ -1,8 +1,11 @@
 import {
   Accessibility,
+  BatteryCharging,
   Baby,
   Building2,
   Camera,
+  Cpu,
+  Database,
   CirclePause,
   DoorOpen,
   Eye,
@@ -10,6 +13,7 @@ import {
   Landmark,
   LockKeyhole,
   MapPinned,
+  PlugZap,
   Network,
   PersonStanding,
   Radar,
@@ -18,6 +22,7 @@ import {
   ScanSearch,
   ShieldCheck,
   TrafficCone,
+  Gauge,
   UserRound,
   UsersRound,
   Volume2,
@@ -49,6 +54,11 @@ const icons: Record<IconName, LucideIcon> = {
   city: Building2,
   institution: Landmark,
   society: UsersRound,
+  battery: BatteryCharging,
+  cpu: Cpu,
+  database: Database,
+  plug: PlugZap,
+  gauge: Gauge,
 }
 
 interface IconProps {

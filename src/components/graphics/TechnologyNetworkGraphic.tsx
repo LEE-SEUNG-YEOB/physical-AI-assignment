@@ -1,12 +1,12 @@
 import { useId, type CSSProperties } from 'react'
 
 const nodes = [
-  ['감지', 300, 62],
-  ['객체 이해', 475, 135],
-  ['이동 예측', 510, 306],
-  ['이동 제어', 300, 382],
-  ['경로 계획', 90, 306],
-  ['공간 판단', 125, 135],
+  ['카메라·LiDAR', 300, 62],
+  ['객체·거리', 475, 135],
+  ['위치 추정', 510, 306],
+  ['안전 제어', 300, 382],
+  ['접근성 경로', 90, 306],
+  ['외부 위험', 125, 135],
 ] as const
 
 export function TechnologyNetworkGraphic() {
@@ -14,9 +14,9 @@ export function TechnologyNetworkGraphic() {
   const descId = useId()
 
   return (
-    <svg className="technology-network-graphic" viewBox="0 0 600 440" role="img" aria-labelledby={`${titleId} ${descId}`}>
-      <title id={titleId}>안전 판단을 중심으로 연결된 여섯 기술</title>
-      <desc id={descId}>감지, 객체 이해, 이동 예측, 이동 제어, 경로 계획과 공간 판단이 중앙 안전 판단 노드에 연결된 구조</desc>
+    <svg className="technology-network-graphic" viewBox="0 0 600 440" role="img" aria-labelledby={`${titleId} ${descId}`} focusable="false">
+      <title id={titleId}>센서와 지도 정보를 실제 이동 제어로 연결하는 기술 구조</title>
+      <desc id={descId}>카메라와 LiDAR, 객체와 거리, 위치 추정, 접근성 경로, 외부 위험 정보가 중앙의 안전 판단을 거쳐 이동 제어로 연결된다</desc>
       <circle className="technology-network-graphic__orbit" cx="300" cy="220" r="162" />
       {nodes.map(([label, x, y], index) => (
         <g className="technology-node" transform={`translate(${x} ${y})`} key={label} style={{ '--node-delay': `${index * 180}ms` } as CSSProperties}>
@@ -28,8 +28,8 @@ export function TechnologyNetworkGraphic() {
       <g className="technology-core" transform="translate(300 220)">
         <circle r="72" />
         <circle r="54" />
-        <text y="-5">SAFE</text>
-        <text y="20">판단</text>
+        <text y="-5">안전</text>
+        <text y="20">판단·행동</text>
       </g>
     </svg>
   )

@@ -6,7 +6,7 @@ const pageTitles: Record<string, string> = {
   '/features': '모두길 | 주요 기능',
   '/journey': '모두길 | 서비스 이용 과정',
   '/technology': '모두길 | 핵심 기술',
-  '/difference': '모두길 | 차별점과 구현 전략',
+  '/difference': '모두길 | 차별점과 운영 모델',
   '/impact': '모두길 | 기대 효과',
 }
 
@@ -17,7 +17,7 @@ export function ScrollToTop() {
   useEffect(() => {
     const pathChanged = previousPath.current !== pathname
     previousPath.current = pathname
-    document.title = pageTitles[pathname] ?? '모두길 | 도시형 Physical AI 이동 지원 서비스'
+    document.title = pageTitles[pathname] ?? '모두길 | Physical AI 자율주행 스마트휠체어'
 
     requestAnimationFrame(() => {
       if (hash) {

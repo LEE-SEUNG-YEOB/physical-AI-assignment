@@ -8,12 +8,12 @@ export function ClosingSection() {
     <section className="section section--dark closing" id="closing" aria-labelledby="closing-title">
       <div className="container closing__grid">
         <RevealOnScroll className="closing__copy">
-          <p className="eyebrow">ONE CONNECTED JOURNEY</p>
+          <p className="eyebrow">INDEPENDENT MOBILITY</p>
           <h2 id="closing-title">
-            <span className="title-line">도시 전체를 하나의</span>
-            <span className="title-line">접근성 공간으로</span>
+            <span className="title-line">목적지를 고른 순간부터,</span>
+            <span className="title-line">도착까지 이어지는 이동</span>
           </h2>
-          <p>모두길은 제한된 구역의 실증에서 안전 정지, 경로 완주와 연속 안내를 먼저 확인하고, 검증 결과에 따라 적용 범위를 넓혀가는 방향을 제안합니다.</p>
+          <p>모두길은 사전 조사된 보행 공간에서 휠체어가 주변을 살피고 통과 가능한 길을 선택하도록 돕는 서비스 아이디어입니다. 완성된 제품이 아니라 독립적인 목적지 이동을 위한 제안입니다.</p>
           <Link className="text-link text-link--inverse" to="/features#safety-process">
             안전 행동 과정 다시 보기 <ArrowUpRight aria-hidden="true" size={18} />
           </Link>

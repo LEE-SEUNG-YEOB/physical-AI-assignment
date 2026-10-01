@@ -13,7 +13,7 @@ export function ProblemSection() {
             id="problem-title"
             eyebrow="WHY MODUGIL"
             titleLines={['같은 길도 누구에게나', '같은 길은 아닙니다']}
-            description="지도에 표시된 길과 사용자가 실제로 통과할 수 있는 길은 다를 수 있습니다. 모두길은 장소마다 끊긴 정보를 하나의 안전 행동으로 연결하려 합니다."
+            description="지도에 표시된 길과 휠체어가 실제로 통과할 수 있는 길은 다를 수 있습니다. 모두길은 반복적인 조작과 판단 부담을 줄이는 이동을 제안합니다."
           />
         </RevealOnScroll>
 
@@ -32,14 +32,14 @@ export function ProblemSection() {
         <RevealOnScroll className="before-after">
           <div className="before-after__item">
             <span>BEFORE</span>
-            <strong>“앞에 장애물이 있습니다.”</strong>
-            <p>정보를 받은 뒤 사용자가 다시 위험과 회피 방법을 판단합니다.</p>
+            <strong>사용자가 폭과 방향을 판단합니다.</strong>
+            <p>장애물과 턱을 확인하고 우회할 공간을 계산하며 조이스틱을 계속 조작합니다.</p>
           </div>
           <ArrowRight className="before-after__arrow" aria-hidden="true" />
           <div className="before-after__item before-after__item--after">
             <span>MODUGIL</span>
-            <strong>“통과 공간을 확인하고 안전한 경로로 이동합니다.”</strong>
-            <p>환경을 이해한 뒤 감속, 정지와 우회 행동으로 연결합니다.</p>
+            <strong>휠체어가 통과 조건을 판단합니다.</strong>
+            <p>공간이 확인되면 감속·회피하고, 부족하거나 불확실하면 먼저 정지합니다.</p>
           </div>
         </RevealOnScroll>
       </div>

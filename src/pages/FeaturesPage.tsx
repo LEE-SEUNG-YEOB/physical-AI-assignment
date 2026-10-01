@@ -9,9 +9,9 @@ export function FeaturesPage() {
   return (
     <>
       <PageHero
-        eyebrow="FEATURES & SAFE MOTION"
-        titleLines={['보고, 판단하고,', '안전하게 움직입니다']}
-        description="주변을 감지한 정보는 공간 판단을 거쳐 감속, 정지와 우회 행동으로 이어집니다. 모두길의 핵심 기능을 세 단계의 안전 흐름으로 보여줍니다."
+        eyebrow="FEATURES AND SAFE MOTION"
+        titleLines={['상황을 읽고,', '휠체어의 행동을 바꿉니다']}
+        description="사람과 장애물, 통과 조건, 앞 구간의 변화와 배터리를 함께 살펴 감속·정지·회피·재탐색으로 연결합니다."
         visual={<SafetyDecisionGraphic />}
         tone="dark"
         variant="features"

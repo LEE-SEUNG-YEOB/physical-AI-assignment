@@ -10,8 +10,8 @@ export function DifferencePointsSection() {
           <SectionHeading
             id="difference-points-title"
             eyebrow="WHAT MAKES IT DIFFERENT"
-            titleLines={['이동의 빈틈을 세 가지', '방식으로 잇습니다']}
-            description="모두길의 차이는 센서 하나보다, 분리된 장소와 정보를 실제 이동 행동으로 연결하는 서비스 구조에 있습니다."
+            titleLines={['도착 가능성을 네 가지', '관점에서 연결합니다']}
+            description="새로운 센서 하나보다 목적지 이동에 필요한 판단과 운영 정보를 한 경험으로 묶는 데 초점을 둡니다."
           />
         </RevealOnScroll>
         <div className="difference-point-grid">

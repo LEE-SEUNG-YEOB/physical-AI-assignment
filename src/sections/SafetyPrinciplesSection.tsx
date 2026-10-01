@@ -12,7 +12,7 @@ export function SafetyPrinciplesSection() {
             id="principles-title"
             eyebrow="SAFETY PRINCIPLES"
             titleLines={['불확실할 때는 멈추고,', '결정권은 사용자에게 둡니다']}
-            description="모두길은 이동 편의보다 안전과 자기결정권을 먼저 고려하며, 필요한 순간에만 개입하는 보조 서비스를 지향합니다."
+            description="외부 정보는 경로 판단을 보완하지만 현장 센서의 정지 판단을 대신하지 않습니다. 안전과 사용자 제어권을 먼저 둡니다."
           />
         </RevealOnScroll>
         <div className="card-grid card-grid--four">

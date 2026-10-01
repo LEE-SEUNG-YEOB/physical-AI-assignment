@@ -6,8 +6,8 @@ export function SafetyDecisionGraphic() {
 
   return (
     <svg className="safety-decision-graphic" viewBox="0 0 680 470" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby={`${titleId} ${descId}`} focusable="false">
-      <title id={titleId}>감지, 판단과 안전 행동의 세 단계</title>
-      <desc id={descId}>센서가 앞사람을 감지하고 이동 공간을 판단한 뒤 감속, 정지 또는 우회하는 흐름</desc>
+      <title id={titleId}>인식, 공간 판단과 조건부 안전 행동의 흐름</title>
+      <desc id={descId}>센서가 주변을 인식하고 이동 공간을 판단한 뒤 먼저 감속하고, 통과 가능하면 우회하거나 불확실하면 정지한 뒤 경로와 배터리를 재확인하는 흐름</desc>
       <rect className="visual-panel visual-panel--dark" x="18" y="18" width="644" height="434" rx="28" />
       <text className="visual-kicker" x="50" y="61">SAFETY DECISION CANVAS</text>
 
@@ -37,8 +37,8 @@ export function SafetyDecisionGraphic() {
       <g className="safety-status" transform="translate(50 385)">
         <rect width="580" height="38" rx="19" />
         <text x="22" y="25">먼저 감속</text>
-        <text x="222" y="25">안전거리 확인</text>
-        <text x="428" y="25">불확실하면 정지</text>
+        <text x="206" y="25">가능하면 저속 회피</text>
+        <text x="405" y="25">정지 후 경로·배터리 확인</text>
       </g>
     </svg>
   )

@@ -7,9 +7,9 @@ export function TechnologyPage() {
   return (
     <>
       <PageHero
-        eyebrow="CONNECTED TECHNOLOGY"
-        titleLines={['여섯 기술이 하나의', '안전 판단을 만듭니다']}
-        description="센서 입력에서 객체 이해, 공간 판단, 경로 계획과 이동 제어까지 각 기술이 중앙의 안전 판단을 중심으로 정보를 주고받습니다."
+        eyebrow="TECHNOLOGY AND DATA"
+        titleLines={['얻은 정보를', '안전한 움직임에 씁니다']}
+        description="기체와 센서, 소프트웨어, 역할이 다른 지도, 외부 위험 정보와 유선 충전이 어디에 쓰이는지 구분해 설명합니다."
         visual={<TechnologyNetworkGraphic />}
         tone="dark"
         variant="technology"

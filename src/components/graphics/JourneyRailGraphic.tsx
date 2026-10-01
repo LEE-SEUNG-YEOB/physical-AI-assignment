@@ -1,16 +1,9 @@
-import { useId } from 'react'
-
-const stops = ['목적지 선택', '경로 확인', '이동 대응', '목적지 도착']
+const stops = ['정지 입력 확인', '경로·배터리 확인', '공사·장애물 대응', '입구 앞 도착']
 
 export function JourneyRailGraphic() {
-  const titleId = useId()
-  const descId = useId()
-
   return (
-    <div className="journey-rail-graphic" role="img" aria-labelledby={`${titleId} ${descId}`}>
-      <span className="sr-only" id={titleId}>모두길 서비스 이용 노선도</span>
-      <span className="sr-only" id={descId}>목적지 선택, 경로 확인, 이동 대응, 목적지 도착의 네 단계를 연결한 노선도</span>
-      <ol>
+    <div className="journey-rail-graphic">
+      <ol aria-label="모두길 서비스 이용 흐름">
         {stops.map((stop, index) => (
           <li key={stop}>
             <span className="journey-rail-graphic__number">0{index + 1}</span>

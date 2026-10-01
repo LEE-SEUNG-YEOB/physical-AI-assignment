@@ -8,8 +8,8 @@ export function ImpactPage() {
     <>
       <PageHero
         eyebrow="EXPECTED IMPACT"
-        titleLines={['한 사람의 이동에서', '도시의 접근성으로']}
-        description="개인의 이동 경험에서 발견한 접근성 문제는 도시와 공공시설의 개선 판단으로 이어질 수 있습니다. 검증이 필요한 변화의 범위를 관계 중심으로 보여줍니다."
+        titleLines={['목적지를 고른 순간부터,', '도착까지 이어지는 이동']}
+        description="기존 휠체어 이용자, 2차·확장 이용자, 보호자·활동보조인과 시설 운영자에게 기대하는 변화를 설명합니다."
         visual={<ImpactOrbitGraphic />}
         tone="cream"
         variant="impact"
