@@ -12,7 +12,7 @@ export function ImpactSection() {
             id="impact-title"
             eyebrow="EXPECTED IMPACT"
             titleLines={['사용자와 지원자에게', '기대하는 변화']}
-            description="성과를 이미 달성한 것처럼 말하지 않고, 목적지 이동과 운영 과정에서 기대하는 변화를 이용자별로 설명합니다."
+            description="목적지 중심의 이동으로 반복적인 조작 부담을 줄이고, 필요한 순간의 지원을 연결하는 변화를 기대합니다."
           />
         </RevealOnScroll>
         <div className="card-grid card-grid--four">

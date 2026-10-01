@@ -41,6 +41,7 @@ export function ScenarioSection() {
           </div>
           <div className="scenario-stage-card">
             <div className="scenario-explorer__visual">
+              <p className="scenario-visual-pan-hint">작은 화면에서는 그림을 좌우로 움직여 세부 내용을 확인할 수 있습니다.</p>
               <JourneyScenarioGraphic activeStep={activeStep} />
             </div>
             <article className="scenario-detail" id="scenario-detail" aria-live="polite" aria-atomic="true">
@@ -61,7 +62,7 @@ export function ScenarioSection() {
             </div>
             <ol>
               <li><span>01</span><div><strong>주행 여유 재확인</strong><p>목적지와 우회 경로를 이동할 수 있는 잔량인지 확인합니다.</p></div></li>
-              <li><span>02</span><div><strong>충전 거점 경유 제안</strong><p>도달 가능한 호환 충전 거점이 있으면 경유 경로를 제안합니다.</p></div></li>
+              <li><span>02</span><div><strong>충전 거점 경유 제안</strong><p>접근 경로와 운영 여부를 확인하고, 호환되며 사용 가능하고 고장 나지 않은 거점에 도달할 수 있을 때만 경유를 제안합니다.</p></div></li>
               <li><span>03</span><div><strong>도달할 수 없으면 안전 정지</strong><p>안전한 곳에 멈추고 도움 요청 방법을 안내합니다.</p></div></li>
             </ol>
             <p className="battery-response__note">충전 케이블은 이용자 또는 시설 직원이 제조사 승인 유선 충전기에 연결합니다.</p>

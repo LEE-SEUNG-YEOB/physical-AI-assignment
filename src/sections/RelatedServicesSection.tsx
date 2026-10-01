@@ -11,7 +11,7 @@ export function RelatedServicesSection() {
             id="related-services-title"
             eyebrow="RELATED SERVICES"
             titleLines={['이미 존재하는 기술과', '적용 범위를 구분합니다']}
-            description="일반 전동휠체어, 시설 내 자율 이동과 연구 사례의 범위를 넓혀 해석하지 않고 모두길의 기획 초점을 비교합니다."
+            description="기존 전동휠체어와 자율 이동 사례를 바탕으로, 모두길이 연결하려는 실외 보행 경험을 살펴봅니다."
           />
         </RevealOnScroll>
         <div className="service-comparison" role="list">
@@ -32,7 +32,7 @@ export function RelatedServicesSection() {
           ))}
         </div>
         <RevealOnScroll className="comparison-note">
-          <p>세계 최초나 더 안전·정확하다는 우위를 주장하지 않습니다. 연구와 시설 내 서비스의 적용 결과를 일반 실외 도심의 검증으로 확대하지 않습니다.</p>
+          <p>모두길은 기존 자율주행 기술을 활용해 사전 조사된 실외 보행 구역의 접근성과 변화하는 통행 조건을 연결하는 서비스 제안입니다.</p>
         </RevealOnScroll>
       </div>
     </section>

@@ -44,7 +44,7 @@ export const safetySteps = [
   { number: '03', title: '먼저 속도를 낮춥니다', description: '위험 가능성이 커지면 감속해 정지하거나 방향을 바꿀 시간을 확보합니다.', state: 'caution' },
   { number: '04', title: '회피하거나 정지합니다', description: '통과 조건이 확인되면 저속으로 회피하고, 부족하거나 불확실하면 정지합니다.', state: 'stop' },
   { number: '05', title: '경로와 배터리를 다시 봅니다', description: '대체 경로의 통과 조건과 배터리 여유, 안전한 대기 공간을 재확인합니다.', state: 'sense' },
-  { number: '06', title: '조건을 확인한 뒤 재개합니다', description: '정상 정지는 변경 이유를 안내한 뒤 재개합니다. 고장·긴급 정지는 원인 해소와 사용자 확인을 기다립니다.', state: 'move' },
+  { number: '06', title: '정지 원인에 맞춰 재개합니다', description: '장애물 정지는 주변과 경로를 다시 확인하고 변경 이유를 안내한 뒤 재개합니다. 사용자 중지·고장·긴급 정지는 해당 해제 조건과 사용자 확인 전까지 유지합니다.', state: 'move' },
 ] as const satisfies readonly ProcessStep[]
 
 export const usageSteps = [
@@ -60,7 +60,7 @@ export const scenarioSteps = [
   { number: '01', label: '출발 준비', place: '공원 입구', situation: '복지관을 목적지로 선택합니다.', checks: '계단이 없는 경로, 접근 가능한 입구, 배터리 여유와 정차 지점', action: '확인된 보행 경로와 도착 지점을 안내한 뒤 출발합니다.' },
   { number: '02', label: '공사 사전 우회', place: '앞 구간', situation: '이동 전에 공사·차단 정보가 수신됩니다.', checks: '관측 시각, 관련 보도, 신뢰도, 유효기간과 대체 보도의 통과 조건', action: '공사 지점에 도착하기 전에 확인된 대체 보도로 경로를 바꿉니다.' },
   { number: '03', label: '보행자 감속·회피', place: '우회 보도', situation: '앞 보도에 보행자가 이동하고 있습니다.', checks: '보행자의 이동 방향, 안전거리, 남은 통과 폭과 정지 거리', action: '먼저 감속하고 안전 여유가 확인되면 낮은 속도로 피해 지나갑니다. 여유가 부족하거나 불확실하면 정지합니다.' },
-  { number: '04', label: '재탐색·안전 대기', place: '안전 대기 지점', situation: '추가 우회가 필요한 상태입니다.', checks: '대체 경로, 배터리 여유, 주변 통행을 방해하지 않는 대기 공간', action: '가능하면 변경 이유를 안내한 뒤 재개하고, 경로가 없으면 정지 상태로 대기합니다.' },
+  { number: '04', label: '재탐색·안전 대기', place: '안전 대기 지점', situation: '추가 우회가 필요한 상태입니다.', checks: '대체 경로, 배터리 여유, 주변 통행을 방해하지 않는 대기 공간', action: '가능한 경로가 있으면 변경 이유를 안내한 뒤 재개합니다. 경로가 없으면 정지 상태에서 이동 취소·수동 전환·도움 요청을 선택할 수 있으며, 같은 막힌 길을 반복하거나 차도·계단으로 강제 우회하지 않습니다. 수동 전환 중에도 충돌 방지와 기체 안전 제한은 유지됩니다.' },
   { number: '05', label: '경사로 접근', place: '복지관 접근로', situation: '정문에는 계단이 있고 측면에 경사로가 있습니다.', checks: '사전에 확인된 측면 경사로와 현재 노면·장애물 상태', action: '경사로의 현장 상태를 다시 확인하며 접근 가능한 입구로 이동합니다.' },
   { number: '06', label: '입구 앞 도착', place: '접근 가능한 입구', situation: '입구 앞 지정 정차 지점에 도착합니다.', checks: '정차 위치와 주변 보행 공간, 안전한 하차 가능 여부', action: '완전히 정지한 뒤 도착과 하차 대기를 안내합니다.' },
 ] as const satisfies readonly ScenarioStep[]
@@ -84,7 +84,7 @@ export const technologies = [
 
 export const principles = [
   { icon: 'shield', title: '불확실하면 정지', description: '위험을 확인할 수 없는 구간을 추측으로 통과하지 않고 감속·정지합니다.' },
-  { icon: 'control', title: '사용자 제어권 유지', description: '물리 버튼, 수동 전환과 이동 취소를 언제든 우선 처리합니다.' },
+  { icon: 'control', title: '사용자 제어권 유지', description: '물리 버튼, 수동 전환과 이동 취소를 언제든 우선 처리합니다. 수동 전환도 충돌 방지와 기체 안전 제한을 우회하지 않습니다.' },
   { icon: 'network', title: '외부 정보와 로컬 제어 분리', description: '외부 정보가 오래되면 최신으로 간주하지 않으며 현장 센서의 정지 판단을 덮어쓰지 않습니다.' },
   { icon: 'privacy', title: '최소 정보 처리', description: '원본 영상의 장기 저장보다 구간·장애물·시각·신뢰도 중심의 위험 이벤트를 다룹니다.' },
 ] as const satisfies readonly PrincipleItem[]

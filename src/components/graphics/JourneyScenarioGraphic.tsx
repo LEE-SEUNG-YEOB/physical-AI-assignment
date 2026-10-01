@@ -6,7 +6,7 @@ const scenes = [
   { title: '출발 준비', description: '복지관을 선택하고 접근 가능한 입구, 경로와 배터리를 확인한 뒤 출발합니다.' },
   { title: '공사 사전 우회', description: '앞 구간의 공사 정보를 확인하고 공사 지점에 닿기 전에 대체 보도로 경로를 바꿉니다.' },
   { title: '보행자 감속·회피', description: '앞의 보행자를 확인하고 감속한 뒤 안전거리를 확보해 낮은 속도로 피해 지나갑니다.' },
-  { title: '재탐색·안전 대기', description: '대체 경로와 배터리를 다시 확인하고, 가능한 경로가 없으면 안전한 지점에서 대기합니다.' },
+  { title: '재탐색·안전 대기', description: '대체 경로와 배터리를 다시 확인합니다. 가능한 경로가 없으면 정지 상태에서 이동 취소, 수동 전환 또는 도움 요청을 선택하고 차도나 계단으로 강제 우회하지 않습니다.' },
   { title: '경사로 접근', description: '통과할 수 없는 정문 계단 대신 확인된 측면 경사로를 선택하고 현장 상태를 다시 확인합니다.' },
   { title: '입구 앞 도착', description: '접근 가능한 입구 앞 지정 정차 지점에 완전히 멈추고 도착과 하차 대기를 안내합니다.' },
 ] as const
@@ -36,7 +36,7 @@ function ObstacleScene() {
 }
 
 function ReplanScene() {
-  return <><SceneHeader number="04" title="재탐색·안전 대기" /><g className="journey-scene__decision" transform="translate(72 108)"><rect width="188" height="198" rx="22" /><text className="journey-scene__kicker" x="94" y="42" textAnchor="middle">다시 확인</text><text x="28" y="86">✓ 대체 경로</text><text x="28" y="124">✓ 배터리 여유</text><text x="28" y="162">✓ 안전 대기 공간</text></g><path className="journey-scene__branch" d="M260 205H327M327 205V143H392M327 205v90h65" /><g className="journey-scene__result journey-scene__result--go" transform="translate(392 99)"><rect width="248" height="90" rx="18" /><text className="journey-scene__kicker" x="24" y="34">경로 있음</text><text x="24" y="65">변경 안내 후 재개 →</text></g><g className="journey-scene__result journey-scene__result--wait" transform="translate(392 250)"><rect width="248" height="90" rx="18" /><text className="journey-scene__kicker" x="24" y="34">경로 없음</text><text x="24" y="65">정지 상태로 안전 대기</text></g><Pill x={93} y={346} width={148} tone="info">경로 다시 계산</Pill></>
+  return <><SceneHeader number="04" title="재탐색·안전 대기" /><g className="journey-scene__decision" transform="translate(62 108)"><rect width="198" height="198" rx="22" /><text className="journey-scene__kicker" x="99" y="42" textAnchor="middle">다시 확인</text><text x="28" y="86">✓ 대체 경로</text><text x="28" y="124">✓ 배터리 여유</text><text x="28" y="162">✓ 안전 대기 공간</text></g><path className="journey-scene__branch" d="M260 205H320M320 205V139H360M320 205v88h40" /><g className="journey-scene__result journey-scene__result--go" transform="translate(360 96)"><rect width="300" height="88" rx="18" /><text className="journey-scene__kicker" x="24" y="33">경로 있음</text><text x="24" y="63">변경 이유 안내 후 주행 재개 →</text></g><g className="journey-scene__result journey-scene__result--wait" transform="translate(360 220)"><rect width="300" height="132" rx="18" /><text className="journey-scene__kicker" x="24" y="31">경로 없음 · 정지 유지</text><rect className="journey-scene__option-strip" x="16" y="51" width="268" height="38" rx="10" /><text className="journey-scene__option-text" x="150" y="76" textAnchor="middle">이동 취소 · 수동 전환 · 도움 요청</text><text className="journey-scene__safe-note" x="150" y="113" textAnchor="middle">막힌 길 반복·차도·계단 강제 우회 없음</text></g><Pill x={87} y={342} width={150} tone="info">경로 다시 계산</Pill></>
 }
 
 function RampScene() {

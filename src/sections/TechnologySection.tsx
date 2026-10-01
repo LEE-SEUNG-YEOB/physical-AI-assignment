@@ -3,7 +3,7 @@ import { RevealOnScroll } from '../components/ui/RevealOnScroll'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { TechnologyCard } from '../components/ui/TechnologyCard'
 import { technologies } from '../data/content'
-import { chargingFlow, technologyGroups } from '../data/technology'
+import { chargingFlow, chargingHubs, technologyGroups } from '../data/technology'
 import type { DataFlowStep } from '../types/content'
 
 function DataFlow({ steps }: { steps: readonly DataFlowStep[] }) {
@@ -94,16 +94,36 @@ export function TechnologySection() {
       </section>
 
       <section className="section" aria-labelledby="charging-flow-title">
-        <div className="container split-process">
-          <RevealOnScroll>
-            <SectionHeading
-              id="charging-flow-title"
-              eyebrow="WIRED CHARGING"
-              titleLines={['호환 거점에서 사람이 연결하는', '유선 충전 방식입니다']}
-              description="제안된 Q500 M 구성은 12V 배터리 두 개의 직렬 24V 전원을 바탕으로 하지만 실제 옵션 확인이 필요합니다. 국내 AC 220V에 호환되는 제조사 승인 충전기를 전제로 하며 무선 충전이나 자동 도킹을 기본 기능으로 제시하지 않습니다. 배터리 여유는 구동·AI·센서 전력, 하중·경사·우회와 배터리 상태를 함께 고려합니다."
-            />
+        <div className="container">
+          <div className="split-process">
+            <RevealOnScroll>
+              <SectionHeading
+                id="charging-flow-title"
+                eyebrow="WIRED CHARGING"
+                titleLines={['호환 거점에서 사람이 연결하는', '유선 충전 방식입니다']}
+                description="제안된 Q500 M 구성은 12V 배터리 두 개의 직렬 24V 전원을 바탕으로 하지만 실제 옵션 확인이 필요합니다. 국내 AC 220V에 호환되는 제조사 승인 충전기를 전제로 하며 무선 충전이나 자동 도킹을 기본 기능으로 제시하지 않습니다. 배터리 여유는 구동·AI·센서 전력, 하중·경사·우회와 배터리 상태를 함께 고려합니다."
+              />
+            </RevealOnScroll>
+            <RevealOnScroll><DataFlow steps={chargingFlow} /></RevealOnScroll>
+          </div>
+          <RevealOnScroll className="charging-hubs">
+            <div className="charging-hubs__heading">
+              <p className="eyebrow">CHARGING HUB OPERATION</p>
+              <h3>장소에 맞춰 설치와 운영 조건을 나눕니다</h3>
+              <p>아래 내용은 설치 완료 현황이 아닌 운영 제안입니다. 일상 이용 후 충분히 충전하는 것을 기본으로 하고, 공공 거점은 이동 중 보충 충전과 안전한 정차 지원에 활용합니다.</p>
+            </div>
+            <div className="charging-hubs__grid">
+              {chargingHubs.map((hub) => (
+                <article key={hub.place}>
+                  <h4>{hub.place}</h4>
+                  <dl>
+                    <div><dt>설치 조건</dt><dd>{hub.condition}</dd></div>
+                    <div><dt>운영 방식</dt><dd>{hub.operation}</dd></div>
+                  </dl>
+                </article>
+              ))}
+            </div>
           </RevealOnScroll>
-          <RevealOnScroll><DataFlow steps={chargingFlow} /></RevealOnScroll>
         </div>
       </section>
     </>

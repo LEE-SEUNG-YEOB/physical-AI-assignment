@@ -218,7 +218,8 @@
 }
 
 .page-hero--impact .page-hero__visual {
-  margin-right: clamp(-6rem, -5vw, -1rem);
+  width: min(100%, 38rem);
+  margin-inline: auto;
 }
 
 .page-hero--difference .page-hero__grid {
@@ -433,51 +434,61 @@
   letter-spacing: 1.5px;
 }
 
-.impact-orbit {
-  stroke-width: 2;
+.impact-link {
+  fill: none;
+  stroke: #d9c8bd;
+  stroke-dasharray: 5 7;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.impact-node {
   transform-box: fill-box;
   transform-origin: center;
-  animation: impactFloat 5.5s ease-in-out infinite;
+  transition: filter 200ms ease, transform 200ms ease;
 }
 
-.impact-orbit--user {
-  fill: rgb(249 115 22 / 13%);
-  stroke: var(--color-brand);
+.impact-node__surface {
+  stroke-width: 2;
+  transition: fill 200ms ease, stroke 200ms ease;
 }
 
-.impact-orbit--city {
-  fill: rgb(161 98 7 / 10%);
-  stroke: var(--color-warning);
-  animation-delay: 350ms;
-}
+.impact-node--user .impact-node__surface { fill: #fff1e7; stroke: var(--color-brand); }
+.impact-node--extended .impact-node__surface { fill: #fff7e8; stroke: var(--color-warning); }
+.impact-node--supporter .impact-node__surface { fill: #f6f2ef; stroke: #887970; }
+.impact-node--operator .impact-node__surface { fill: #fff2eb; stroke: #a64b23; }
+.impact-node__badge { fill: var(--color-white); stroke: currentColor; stroke-width: 2; }
+.impact-node--user { color: var(--color-brand); }
+.impact-node--extended { color: var(--color-warning); }
+.impact-node--supporter { color: #887970; }
+.impact-node--operator { color: #a64b23; }
 
-.impact-orbit--place {
-  fill: rgb(104 95 89 / 9%);
-  stroke: #887970;
-  animation-delay: 700ms;
-}
-
-.impact-orbit--support {
-  fill: rgb(194 65 12 / 8%);
-  stroke: #a64b23;
-  animation-delay: 1050ms;
-}
-
-.impact-orbit__label {
-  fill: var(--color-text);
-  font-size: 16px;
-  font-weight: 800;
+.impact-node__number {
+  fill: currentColor;
+  font-size: 11px;
+  font-weight: 900;
   text-anchor: middle;
 }
 
+.impact-node__title,
+.impact-node__subtitle {
+  fill: var(--color-text);
+  text-anchor: middle;
+}
+
+.impact-node__title { font-size: 17px; font-weight: 900; }
+.impact-node__subtitle { fill: var(--color-muted); font-size: 13px; font-weight: 750; }
+
 .impact-orbit__core circle {
   fill: var(--color-brand);
+  stroke: var(--color-white);
+  stroke-width: 5;
 }
 
 .impact-orbit__core text {
   fill: var(--color-white);
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 900;
   text-anchor: middle;
 }
 
@@ -700,6 +711,106 @@
   fill: var(--color-text);
   font-size: 16px;
   font-weight: 700;
+}
+
+.route-map__status rect {
+  fill: var(--color-white);
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+}
+
+.route-map__status circle { fill: #16834a; }
+.route-map__status text { fill: var(--color-muted); font-size: 12px; font-weight: 850; }
+.route-map__divider { fill: none; stroke: var(--color-border); stroke-width: 1.5; }
+.route-map__background { fill: #fffaf6; stroke: #eadfd8; stroke-width: 1.5; }
+.route-map__grid { opacity: 0.6; }
+.route-map__grid-line { fill: none; stroke: #eadfd8; stroke-width: 1; }
+.route-map__building { fill: #f1e8e1; opacity: 0.8; }
+
+.route-map__walkway {
+  fill: none;
+  stroke: #f0d9cb;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 34;
+}
+
+.route-map__selected-path {
+  stroke-width: 7;
+  transition: stroke-width 200ms ease;
+}
+
+.route-map__blocked-path {
+  fill: none;
+  stroke: var(--color-danger);
+  stroke-dasharray: 7 7;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.route-map__construction > rect:first-child {
+  fill: #fff0f0;
+  stroke: #e7a9a9;
+  stroke-width: 2;
+}
+
+.route-map__construction > path {
+  fill: none;
+  stroke: #efb4b4;
+  stroke-width: 4;
+}
+
+.route-map__construction .route-map__construction-label {
+  fill: var(--color-white);
+  stroke: var(--color-danger);
+  stroke-width: 1.5;
+}
+
+.route-map__construction text { fill: var(--color-danger); font-size: 12px; font-weight: 900; }
+
+.route-waypoint {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.route-waypoint__card {
+  fill: var(--color-white);
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+}
+
+.route-waypoint--destination .route-waypoint__card { fill: #eefaf3; stroke: #8bc7a5; }
+.route-waypoint--charge .route-waypoint__card { fill: #fff8e8; stroke: #d7ab59; }
+.route-waypoint__icon { fill: var(--color-tint); stroke: var(--color-brand); stroke-width: 2; }
+.route-waypoint--destination .route-waypoint__icon { fill: #dff5e8; stroke: #16834a; }
+.route-waypoint--charge .route-waypoint__icon { fill: #fff0c7; stroke: var(--color-warning); }
+
+.route-waypoint path {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.route-waypoint__title { fill: var(--color-text); font-size: 13px; font-weight: 900; }
+.route-waypoint__subtitle { fill: var(--color-muted); font-size: 11px; font-weight: 750; }
+.route-traveler__sensor { fill: rgb(198 65 12 / 8%); stroke: var(--color-brand); stroke-dasharray: 5 6; stroke-width: 2; }
+
+.route-map__traveler-label rect { fill: var(--color-white); stroke: var(--color-brand); stroke-width: 1.5; }
+.route-map__traveler-label text { fill: var(--color-brand); font-size: 11px; font-weight: 900; }
+
+@media (hover: hover) and (pointer: fine) {
+  .impact-node:hover,
+  .route-waypoint:hover {
+    filter: drop-shadow(0 9px 10px rgb(74 46 32 / 15%));
+    transform: translateY(-5px) scale(1.015);
+  }
+
+  .route-graphic:hover .route-map__selected-path {
+    stroke-width: 9;
+  }
 }
 
 .section-heading {
@@ -1365,6 +1476,8 @@
   background: transparent;
 }
 
+.scenario-visual-pan-hint { display: none; }
+
 .scenario-stage-card {
   min-width: 0;
   overflow: hidden;
@@ -1471,6 +1584,9 @@
 .journey-scene__result rect { fill: var(--color-white); stroke: var(--color-border); stroke-width: 2; }
 .journey-scene__result--go rect { fill: #ecfdf3; stroke: #16834a; }
 .journey-scene__result--wait rect { fill: #fff0f0; stroke: var(--color-danger); }
+.journey-scene__result .journey-scene__option-strip { fill: var(--color-white); stroke: #e7b1b1; stroke-width: 1; }
+.journey-scene__result .journey-scene__option-text { fill: var(--color-text); font-size: 12px; font-weight: 850; }
+.journey-scene__result .journey-scene__safe-note { fill: var(--color-danger); font-size: 11px; font-weight: 850; }
 .journey-scene__branch { stroke: var(--color-brand); stroke-width: 4; }
 .journey-scene__entrance text,
 .journey-scene__building text { fill: var(--color-text); font-size: 14px; font-weight: 850; }
@@ -1669,7 +1785,10 @@
 .support-card__priority + h3 { margin-top: 0.4rem; }
 .support-operation-area { margin-top: 2rem; padding: clamp(1.25rem, 3vw, 2rem); border-left: 4px solid var(--color-brand); background: var(--color-cream); }
 .support-operation-area h3 { margin-top: 0.5rem; font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
-.support-operation-area > p:last-child { margin-top: 0.65rem; color: var(--color-muted); }
+.support-operation-area__grid { margin-top: 1.25rem; display: grid; gap: 0.75rem; }
+.support-operation-area__grid article { min-width: 0; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-white); }
+.support-operation-area__grid h4 { margin: 0; color: var(--color-brand); font-size: 0.83rem; font-weight: 900; line-height: 1.3; }
+.support-operation-area__grid p { margin-top: 0.45rem; color: var(--color-muted); }
 
 .support-card__interface {
   padding-top: 1rem;
@@ -1800,6 +1919,18 @@
 
 .data-flow h3 { font-size: 1.08rem; }
 .data-flow p { margin-top: 0.4rem; color: var(--color-muted); }
+
+.charging-hubs { margin-top: clamp(3rem, 7vw, 5rem); }
+.charging-hubs__heading { max-width: 58rem; }
+.charging-hubs__heading h3 { margin-top: 0.65rem; font-size: clamp(1.4rem, 3vw, 2rem); }
+.charging-hubs__heading > p:last-child { margin-top: 0.75rem; color: var(--color-muted); }
+.charging-hubs__grid { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.charging-hubs__grid article { min-width: 0; padding: clamp(1.1rem, 2vw, 1.4rem); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-cream); }
+.charging-hubs__grid h4 { margin: 0; font-size: 1.05rem; line-height: 1.3; }
+.charging-hubs__grid dl { margin: 1rem 0 0; display: grid; gap: 0.85rem; }
+.charging-hubs__grid dl div { padding-top: 0.75rem; border-top: 1px solid var(--color-border); }
+.charging-hubs__grid dt { color: var(--color-brand); font-size: 0.73rem; font-weight: 900; }
+.charging-hubs__grid dd { margin: 0.25rem 0 0; color: var(--color-muted); }
 
 .map-architecture {
   padding: clamp(1rem, 2vw, 1.5rem);
@@ -1939,6 +2070,32 @@
   stroke: #765f54;
 }
 
+.closing .route-map__status rect,
+.closing .route-waypoint__card,
+.closing .route-map__traveler-label rect {
+  fill: #302621;
+  stroke: #6f574a;
+}
+
+.closing .route-map__status text,
+.closing .route-waypoint__subtitle { fill: #d9d0ca; }
+.closing .route-map__divider { stroke: #5c4b42; }
+.closing .route-map__background { fill: #2e2520; stroke: #5c4b42; }
+.closing .route-map__grid-line { stroke: #514139; }
+.closing .route-map__building { fill: #43362f; }
+.closing .route-map__walkway { stroke: #514139; }
+.closing .route-waypoint__title { fill: var(--color-white); }
+.closing .route-waypoint__icon { fill: #5a2d1b; stroke: var(--color-bright); }
+.closing .route-waypoint--destination .route-waypoint__card { fill: #263b30; stroke: #5d9b76; }
+.closing .route-waypoint--destination .route-waypoint__icon { fill: #31513e; stroke: #8dd1a9; }
+.closing .route-waypoint--charge .route-waypoint__card { fill: #40351f; stroke: #9f7b38; }
+.closing .route-waypoint--charge .route-waypoint__icon { fill: #59491f; stroke: #e5bb66; }
+.closing .route-map__construction > rect:first-child { fill: #472727; stroke: #8d4d4d; }
+.closing .route-map__construction > path { stroke: #7f4545; }
+.closing .route-map__construction .route-map__construction-label { fill: #302621; }
+.closing .route-traveler__sensor { fill: rgb(255 183 124 / 8%); stroke: var(--color-bright); }
+.closing .route-map__traveler-label text { fill: var(--color-bright); }
+
 .site-footer {
   padding-block: 2.5rem;
   border-top: 1px solid #4f4038;
@@ -2018,6 +2175,11 @@
   .card-grid--four,
   .card-grid--three,
   .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-operation-area__grid,
+  .charging-hubs__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2176,6 +2338,47 @@
 
   .support-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
+  .hero__grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 4vw, 3.75rem);
+  }
+
+  .hero__visual {
+    width: min(116%, 48rem);
+    margin-right: clamp(-4.5rem, -4vw, -2rem);
+    padding: clamp(0.5rem, 1.4vw, 1.15rem);
+    justify-self: end;
+    border-radius: clamp(1.5rem, 3vw, 2.5rem);
+    background: radial-gradient(circle at 54% 52%, var(--color-tint) 0 34%, rgb(255 247 237 / 55%) 52%, transparent 74%);
+  }
+
+  .features-grid,
+  .support-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .features-grid > .reveal,
+  .support-grid > .reveal {
+    grid-column: span 2;
+  }
+
+  .features-grid > .reveal:nth-last-child(2),
+  .support-grid > .reveal:nth-last-child(2) {
+    grid-column: 2 / span 2;
+  }
+
+  .features-grid > .reveal:last-child,
+  .support-grid > .reveal:last-child {
+    grid-column: 4 / span 2;
+  }
+
+  .support-operation-area__grid,
+  .charging-hubs__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
   .strategy-track {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2216,8 +2419,7 @@
   }
 
   .page-hero--impact .page-hero__visual {
-    margin-right: -2rem;
-    margin-left: -0.75rem;
+    margin-inline: 0;
   }
 
   .hero__visual {
@@ -2228,6 +2430,24 @@
 
   .safety-graphic-wrap {
     position: static;
+  }
+}
+
+@media (max-width: 420px) {
+  .scenario-explorer__visual {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .scenario-visual-pan-hint {
+    display: block;
+    margin: 0.25rem 0.5rem 0.6rem;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+  }
+
+  .journey-scenario-graphic {
+    min-width: 520px;
   }
 }
 
@@ -2242,8 +2462,12 @@
   .journey-rail-graphic__traveler,
   .technology-node circle,
   .technology-core circle,
-  .impact-orbit {
+  .impact-node,
+  .route-waypoint {
     animation: none;
+    filter: none;
+    transform: none;
+    transition: none;
   }
 
   .difference-bridge-graphic__link {
@@ -2251,7 +2475,8 @@
   }
 
   .journey-scenario-graphic__route,
-  .journey-scene__route { animation: none; }
+  .journey-scene__route,
+  .journey-scene__avoid-route { animation: none; }
 
   .reveal[data-ready="true"] {
     opacity: 1;

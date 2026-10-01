@@ -19,7 +19,7 @@ export const technologyGroups = [
     id: 'software',
     eyebrow: 'SOFTWARE PIPELINE',
     title: '인식에서 안전 제어까지',
-    description: '기술 이름을 나열하는 대신 어떤 정보를 얻고 어디에 쓰는지를 연결합니다.',
+    description: '센서의 관측이 위치 추정·경로 계획·제어를 거쳐 휠체어의 움직임으로 이어집니다.',
     items: [
       { name: 'YOLO11n 등 경량 객체 인식', role: '영상에서 사람·자전거 등의 영역을 찾는 인식 모델', use: '깊이·LiDAR와 결합해 대상의 위치와 거리를 판단', limit: '기본 모델이 모든 장애물을 인식한다고 가정하지 않습니다.' },
       { name: 'ROS 2', role: '센서·위치 추정·경로 계획·제어 사이의 데이터 전달 기반', use: '기체 내부 소프트웨어 모듈 연결', limit: 'ROS 2 자체가 안전이나 자율주행 성능을 보장하지 않습니다.' },
@@ -62,3 +62,21 @@ export const chargingFlow = [
   { number: '04', title: '충전 중 이동 잠금', description: '연결과 충전 상태를 확인하고 자율주행을 잠급니다.' },
   { number: '05', title: '분리 후 운행 재개', description: '충전을 종료하고 케이블을 분리한 뒤 기체 상태를 확인합니다.' },
 ] as const satisfies readonly DataFlowStep[]
+
+export const chargingHubs = [
+  {
+    place: '복지관·주민센터·병원',
+    condition: '평탄한 정차 공간, 접근 가능한 진입로와 기체에 맞는 제조사 승인 충전기를 갖춥니다.',
+    operation: '시설 담당자가 연결 상태를 확인하고 필요한 경우 케이블 연결과 이용자 도움을 지원합니다.',
+  },
+  {
+    place: '공원 입구·공공시설 외부',
+    condition: '비 가림, 케이블 정리와 전원 보호·점검 조건을 갖추고 보행 통로를 막지 않도록 배치합니다.',
+    operation: '운영 시간과 고장·사용 가능 상태를 표시해 경유 전에 확인할 수 있도록 합니다.',
+  },
+  {
+    place: '가정·개인 공간',
+    condition: '전용 충전기와 환기 조건을 갖추고 기체가 안전하게 정차할 공간을 확보합니다.',
+    operation: '일상 이용 후 충분히 충전하고 장거리 이동 전 배터리와 충전 상태를 확인합니다.',
+  },
+] as const
