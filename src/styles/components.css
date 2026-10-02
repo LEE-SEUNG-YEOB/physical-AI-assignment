@@ -2670,7 +2670,11 @@
   display: grid;
   gap: 0;
   list-style: none;
-  border-block: 1px solid var(--color-border);
+  overflow: hidden;
+  border: 1px solid #d5c2b5;
+  border-radius: var(--radius-card);
+  background: rgb(255 255 255 / 38%);
+  box-shadow: 0 12px 32px rgb(89 51 31 / 5%);
 }
 
 .problem-card {
@@ -2682,7 +2686,7 @@
   align-content: start;
   gap: 0.2rem 1.25rem;
   border: 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #d5c2b5;
   border-radius: 0;
   background: transparent;
 }
@@ -3094,6 +3098,10 @@
   .impact-story__item:nth-child(odd) {
     padding-right: clamp(1.5rem, 4vw, 3rem);
     border-right: 1px solid var(--color-border);
+  }
+
+  .problem-card:nth-child(odd) {
+    border-right-color: #d5c2b5;
   }
 
   .problem-card:nth-child(even),
@@ -3854,11 +3862,14 @@
     transform: translateY(-4px) rotateX(1deg);
   }
 
-  .network-card:hover,
   .difference-bridge-node:hover,
   .impact-node:hover,
   .route-waypoint:hover {
     transform: none;
+    filter: drop-shadow(0 14px 12px rgb(71 45 30 / 18%));
+  }
+
+  .network-card:hover {
     filter: drop-shadow(0 14px 12px rgb(71 45 30 / 18%));
   }
 }
@@ -4420,6 +4431,36 @@
 
 .map-architecture__layers li:nth-child(3) {
   background: #fff8ed;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n + 1) .technology-card {
+  border-color: #654b3c;
+  background: #33261f;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n + 2) .technology-card {
+  border-color: #51443d;
+  background: #2a2421;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n + 3) .technology-card {
+  border-color: #624b3f;
+  background: #342820;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n + 4) .technology-card {
+  border-color: #57453c;
+  background: #2d231f;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n + 5) .technology-card {
+  border-color: #674b3b;
+  background: #37271f;
+}
+
+.section--dark .technology-grid > .reveal:nth-child(6n) .technology-card {
+  border-color: #514640;
+  background: #292522;
 }
 
 @media (min-width: 768px) {
