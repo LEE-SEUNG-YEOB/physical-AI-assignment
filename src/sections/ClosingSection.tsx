@@ -8,7 +8,6 @@ export function ClosingSection() {
     <section className="section section--dark closing" id="closing" aria-labelledby="closing-title">
       <div className="container closing__grid">
         <RevealOnScroll className="closing__copy">
-          <p className="eyebrow">INDEPENDENT MOBILITY</p>
           <h2 id="closing-title">
             <span className="title-line">목적지를 고른 순간부터,</span>
             <span className="title-line">도착까지 이어지는 이동</span>

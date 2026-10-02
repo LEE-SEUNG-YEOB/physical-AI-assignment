@@ -7,12 +7,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1rem);
+  background: var(--surface-canvas);
 }
 
 body {
   margin: 0;
   min-width: 0;
-  background: var(--color-white);
+  background: var(--surface-canvas);
   color: var(--color-text);
   font-size: 1rem;
   line-height: 1.7;
@@ -49,8 +50,8 @@ figure {
 h1,
 h2,
 h3 {
-  line-height: 1.18;
-  letter-spacing: -0.035em;
+  line-height: 1.16;
+  letter-spacing: -0.018em;
   text-wrap: balance;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -89,11 +90,6 @@ h2[tabindex="-1"]:focus {
   outline: none;
 }
 
-.section--dark :focus-visible,
-.site-footer :focus-visible {
-  outline-color: var(--color-bright);
-}
-
 .container {
   width: min(100% - (var(--gutter) * 2), var(--container));
   margin-inline: auto;
@@ -106,7 +102,7 @@ h2[tabindex="-1"]:focus {
 }
 
 .section--cream {
-  background: var(--color-cream);
+  background: var(--surface-soft);
 }
 
 .section--dark {
@@ -120,8 +116,8 @@ h2[tabindex="-1"]:focus {
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.75rem 1rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-white);
+  border-radius: var(--radius-control);
+  background: var(--surface-raised);
   color: var(--color-text);
   font-weight: 800;
   transform: translateY(-180%);

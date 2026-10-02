@@ -1,4 +1,4 @@
-import { InfoCard } from '../components/ui/InfoCard'
+import { Icon } from '../components/icons/Icon'
 import { RevealOnScroll } from '../components/ui/RevealOnScroll'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { impacts } from '../data/content'
@@ -10,15 +10,15 @@ export function ImpactSection() {
         <RevealOnScroll>
           <SectionHeading
             id="impact-title"
-            eyebrow="EXPECTED IMPACT"
             titleLines={['사용자와 지원자에게', '기대하는 변화']}
             description="목적지 중심의 이동으로 반복적인 조작 부담을 줄이고, 필요한 순간의 지원을 연결하는 변화를 기대합니다."
           />
         </RevealOnScroll>
-        <div className="card-grid card-grid--four">
+        <div className="impact-story">
           {impacts.map((impact, index) => (
-            <RevealOnScroll delay={(index % 4) * 60} key={impact.title}>
-              <InfoCard icon={impact.icon} title={impact.title} description={impact.description} />
+            <RevealOnScroll as="article" className="impact-story__item" delay={(index % 4) * 60} key={impact.title}>
+              <span><Icon name={impact.icon} /></span>
+              <div><h3>{impact.title}</h3><p>{impact.description}</p></div>
             </RevealOnScroll>
           ))}
         </div>

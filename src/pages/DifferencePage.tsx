@@ -20,7 +20,6 @@ export function DifferencePage() {
       <RelatedServicesSection />
       <OperationModelsSection />
       <PageNextLink
-        eyebrow="NEXT · IMPACT"
         titleLines={['연결된 이동은', '어떤 변화를 만들 수 있을까요?']}
         label="기대 효과와 운영 원칙 보기"
         to="/impact"

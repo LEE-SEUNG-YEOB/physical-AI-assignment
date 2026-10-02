@@ -16,7 +16,7 @@ export function DifferencePointsSection() {
         </RevealOnScroll>
         <div className="difference-point-grid">
           {differencePoints.map((point, index) => (
-            <RevealOnScroll delay={index * 70} key={point.number}>
+            <RevealOnScroll className="difference-cell" delay={index * 70} key={point.number}>
               <article className="difference-point">
                 <span>{point.number}</span>
                 <h3>{point.title}</h3>

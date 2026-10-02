@@ -14,7 +14,6 @@ export function ScenarioSection() {
         <RevealOnScroll>
           <SectionHeading
             id="scenario-title"
-            eyebrow="USER JOURNEY"
             titleLines={['공원 입구에서 복지관까지', '여섯 단계의 이동']}
             description="장소·발생 상황·판단 정보·행동을 단계별로 확인합니다. 실제 운행 기록이나 실시간 지도 화면이 아닌 고정 예시입니다."
           />
@@ -46,7 +45,7 @@ export function ScenarioSection() {
             </div>
             <article className="scenario-detail" id="scenario-detail" aria-live="polite" aria-atomic="true">
               <header>
-                <p className="journey-item__place">{selectedStep.number} · {selectedStep.place}</p>
+                <p className="journey-item__place">{selectedStep.number} {selectedStep.place}</p>
                 <h3>{selectedStep.situation}</h3>
               </header>
               <dl className="journey-item__details">
@@ -57,7 +56,7 @@ export function ScenarioSection() {
           </div>
           <aside className="battery-response" aria-labelledby="battery-response-title">
             <div className="battery-response__heading">
-              <p className="eyebrow">BATTERY RESPONSE</p>
+              <p className="battery-response__label">배터리 대응</p>
               <h3 id="battery-response-title">모든 이동 단계에 적용되는 배터리 대응</h3>
             </div>
             <ol>

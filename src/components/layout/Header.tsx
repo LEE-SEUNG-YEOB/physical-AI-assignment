@@ -6,6 +6,7 @@ import { navigationItems } from '../../data/content'
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const mobileNavRef = useRef<HTMLElement>(null)
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null)
   const location = useLocation()
 
@@ -23,6 +24,19 @@ export function Header() {
         setIsOpen(false)
         menuButtonRef.current?.focus()
       }
+      if (event.key === 'Tab' && isOpen) {
+        const links = Array.from(mobileNavRef.current?.querySelectorAll<HTMLAnchorElement>('a') ?? [])
+        const focusable = [menuButtonRef.current, ...links].filter(
+          (element): element is HTMLButtonElement | HTMLAnchorElement => element !== null,
+        )
+        const currentIndex = focusable.findIndex((element) => element === document.activeElement)
+        if (currentIndex === -1) return
+        const nextIndex = event.shiftKey
+          ? (currentIndex - 1 + focusable.length) % focusable.length
+          : (currentIndex + 1) % focusable.length
+        event.preventDefault()
+        focusable[nextIndex].focus()
+      }
     }
     const onResize = () => {
       if (window.innerWidth >= 960) setIsOpen(false)
@@ -38,7 +52,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link className="brand" to="/" aria-label="모두길 서비스 소개로">
+        <Link className="brand" to="/" aria-label="모두길 홈으로 이동">
           <span className="brand__mark" aria-hidden="true">M</span>
           <span><strong>모두길</strong><small>MODUGIL</small></span>
         </Link>
@@ -68,7 +82,7 @@ export function Header() {
         </button>
       </div>
 
-      <nav id="mobile-navigation" className="mobile-nav" aria-label="모바일 주요 메뉴" hidden={!isOpen}>
+      <nav ref={mobileNavRef} id="mobile-navigation" className="mobile-nav" aria-label="모바일 주요 메뉴" hidden={!isOpen}>
         {navigationItems.map((item, index) => (
           <NavLink
             ref={index === 0 ? firstMobileLinkRef : undefined}

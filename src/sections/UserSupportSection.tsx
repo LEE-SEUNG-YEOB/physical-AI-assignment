@@ -10,14 +10,13 @@ export function UserSupportSection() {
         <RevealOnScroll>
           <SectionHeading
             id="support-title"
-            eyebrow="USERS AND OPERATION AREA"
             titleLines={['휠체어 이용자를 중심으로', '필요한 이동을 지원합니다']}
             description="휠체어 이용자를 중심으로, 이용자의 이동 조건에 맞춰 입력과 안내 방식을 조정합니다."
           />
         </RevealOnScroll>
-        <div className="card-grid support-grid">
+        <div className="support-grid">
           {supportProfiles.map((profile, index) => (
-            <RevealOnScroll delay={(index % 4) * 60} key={profile.title}>
+            <RevealOnScroll className={index === 0 ? 'support-cell support-cell--lead' : 'support-cell'} delay={(index % 4) * 60} key={profile.title}>
               <article className="support-card">
                 <span className="support-card__icon"><Icon name={profile.icon} /></span>
                 <p className="support-card__priority">{profile.priority}</p>
@@ -29,7 +28,7 @@ export function UserSupportSection() {
           ))}
         </div>
         <RevealOnScroll className="support-operation-area">
-          <p className="eyebrow">OPERATION AREA</p>
+          <p className="support-operation-area__label">운행 범위</p>
           <h3>사전 조사된 보행 공간에서만 운행합니다</h3>
           <div className="support-operation-area__grid">
             <article>

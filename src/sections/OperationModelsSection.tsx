@@ -4,7 +4,7 @@ import { operationModels } from '../data/difference'
 
 export function OperationModelsSection() {
   return (
-    <section className="section section--dark" id="operation-models" aria-labelledby="operation-models-title">
+    <section className="section section--dark operation-models" id="operation-models" aria-labelledby="operation-models-title">
       <div className="container">
         <RevealOnScroll>
           <SectionHeading

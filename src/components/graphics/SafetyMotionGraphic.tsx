@@ -15,8 +15,8 @@ export function SafetyMotionGraphic() {
         aria-labelledby={`${titleId} ${descId}`}
         focusable="false"
       >
-        <title id={titleId}>앞사람을 감지한 이동 기기의 감속과 우회 개념도</title>
-        <desc id={descId}>휠체어 이동 기기가 앞사람을 감지하고 감속한 뒤, 통로가 열리면 오른쪽으로 우회하거나 불확실하면 정지하는 과정을 나타낸다</desc>
+        <title id={titleId}>앞의 보행자를 감지한 이동 기기의 감속과 우회 개념도</title>
+        <desc id={descId}>휠체어 이동 기기가 앞의 보행자를 감지하고 감속한 뒤, 통로가 열리면 오른쪽으로 우회하거나 불확실하면 정지하는 과정을 나타낸다</desc>
         <rect className="safety-road" x="64" y="40" width="512" height="500" rx="30" />
         <path className="safety-road-line" d="M320 60v460" />
         <path className="safety-path safety-path--main" d="M205 408C208 380 220 357 246 338" />

@@ -1,6 +1,6 @@
 interface SectionHeadingProps {
   id: string
-  eyebrow: string
+  eyebrow?: string
   title?: string
   titleLines?: readonly string[]
   description?: string
@@ -19,7 +19,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <header className={`section-heading section-heading--${align} ${inverse ? 'section-heading--inverse' : ''}`}>
-      <p className="eyebrow">{eyebrow}</p>
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2 id={id} tabIndex={-1}>
         {titleLines
           ? titleLines.map((line) => <span className="title-line" key={line}>{line}</span>)

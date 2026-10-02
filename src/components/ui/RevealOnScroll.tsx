@@ -4,10 +4,11 @@ interface RevealOnScrollProps {
   children: ReactNode
   className?: string
   delay?: number
+  as?: 'div' | 'li' | 'article'
 }
 
-export function RevealOnScroll({ children, className = '', delay = 0 }: RevealOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null)
+export function RevealOnScroll({ children, className = '', delay = 0, as = 'div' }: RevealOnScrollProps) {
+  const ref = useRef<HTMLElement | null>(null)
   const [ready] = useState(
     () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window,
   )
@@ -36,14 +37,14 @@ export function RevealOnScroll({ children, className = '', delay = 0 }: RevealOn
     return () => observer.disconnect()
   }, [ready])
 
-  return (
-    <div
-      ref={ref}
-      className={`reveal ${visible ? 'is-visible' : ''} ${className}`.trim()}
-      data-ready={ready || undefined}
-      style={{ '--reveal-delay': `${delay}ms` } as CSSProperties}
-    >
-      {children}
-    </div>
-  )
+  const sharedProps = {
+    ref: (node: HTMLElement | null) => { ref.current = node },
+    className: `reveal ${visible ? 'is-visible' : ''} ${className}`.trim(),
+    'data-ready': ready || undefined,
+    style: { '--reveal-delay': `${delay}ms` } as CSSProperties,
+  }
+
+  if (as === 'li') return <li {...sharedProps}>{children}</li>
+  if (as === 'article') return <article {...sharedProps}>{children}</article>
+  return <div {...sharedProps}>{children}</div>
 }

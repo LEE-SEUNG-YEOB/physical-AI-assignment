@@ -1,4 +1,4 @@
-const stops = ['정지 입력 확인', '경로·배터리 확인', '공사·장애물 대응', '입구 앞 도착']
+const stops = ['출발 조건 확인', '경로·배터리 확인', '공사·보행자 대응', '입구 앞 도착']
 
 export function JourneyRailGraphic() {
   return (

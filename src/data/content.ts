@@ -31,7 +31,7 @@ export const connectedLayers = [
 ] as const
 
 export const features = [
-  { number: 'F1', icon: 'scan', title: '실시간 장애물 인식과 자동 회피', situation: '앞사람이 멈추거나 자전거·킥보드·적치물이 이동 경로에 나타납니다.', judgment: '대상의 위치와 움직임, 예상 충돌 위험과 남은 회피 공간을 확인합니다.', action: '먼저 감속하고 안전 여유가 있으면 낮은 속도로 우회하며, 불확실하거나 폭이 부족하면 정지합니다.' },
+  { number: 'F1', icon: 'scan', title: '실시간 장애물 인식과 자동 회피', situation: '앞의 보행자가 멈추거나 자전거, 킥보드와 적치물이 이동 경로에 나타납니다.', judgment: '대상의 위치와 움직임, 예상 충돌 위험과 남은 회피 공간을 확인합니다.', action: '먼저 감속하고 안전 여유가 있으면 낮은 속도로 우회하며, 불확실하거나 폭이 부족하면 정지합니다.' },
   { number: 'F2', icon: 'space', title: '휠체어 통과 가능성 판단', situation: '통로는 넓어 보여도 모퉁이가 좁거나 턱·경사·젖은 노면이 있습니다.', judgment: '기체 폭·길이·발판·회전 공간과 통로 폭, 턱, 경사, 노면의 불확실성을 비교합니다.', action: '실제로 통과하고 회전할 수 있는 구간만 진입하고, 조건을 확인하기 어려우면 멈춥니다.' },
   { number: 'F3', icon: 'route', title: '접근성 기반 자율 경로 탐색', situation: '가까운 길에는 계단이 있고 조금 먼 곳에 확인된 경사로와 접근 가능한 입구가 있습니다.', judgment: '통과 조건, 입구·정차 지점과 배터리 여유를 먼저 확인한 뒤 거리와 우회 부담을 비교합니다.', action: '가장 짧은 길보다 실제로 도착할 수 있는 경로를 선택하고 배터리가 부족하면 출발 또는 우회를 제한합니다.' },
   { number: 'F4', icon: 'network', title: '외부 정보 연동과 우회 경로 재탐색', situation: '아직 도착하지 않은 보도에 공사가 시작되거나 허용된 CCTV에서 차단이 확인됩니다.', judgment: '정보의 관측 시각, 관련 보도, 신뢰도와 유효기간을 확인하고 대체 경로 조건을 다시 계산합니다.', action: '확인된 먼 위험은 진입 전에 우회하고, 새 현장 장애물은 자체 센서로 확인해 정지 후 재탐색합니다.', tags: ['오래된 정보·사각지대는 미확인'] },
@@ -66,11 +66,11 @@ export const scenarioSteps = [
 ] as const satisfies readonly ScenarioStep[]
 
 export const supportProfiles = [
-  { icon: 'wheelchair', priority: '1차 핵심', title: '하체 지체장애인·기존 휠체어 이용자', focus: '일상 이동에 휠체어가 필요하고 복잡한 보도 판단과 지속적인 조작 부담을 줄이고자 하는 이용자입니다.', interface: '목적지 선택 · 자동 이동 · 정지 · 수동 전환' },
-  { icon: 'person', priority: '2차 대상', title: '보행 능력이 저하된 고령자', focus: '짧은 거리는 걸을 수 있지만 장거리 보행이나 균형 유지가 어려울 때 필요한 구간에서 이용합니다.', interface: '큰 글씨 · 단순 메뉴 · 저속 설정' },
-  { icon: 'person', priority: '2차 대상', title: '부상·수술 후 회복자', focus: '회복 기간 동안 보행이 제한될 때 병원·재활시설 주변에서 단기 이동 지원을 이용합니다.', interface: '정지 버튼 · 탑승 안내 · 부드러운 주행' },
-  { icon: 'accessibility', priority: '확장 대상', title: '복합 접근성 요구가 있는 이용자', focus: '보행장애와 시각 또는 상지 조작 제약이 함께 있는 경우 입력과 상태 안내 방식을 조정합니다.', interface: '음성 · 촉각 버튼 · 진동 안내' },
-  { icon: 'temporary', priority: '확장 대상', title: '임산부 등 일시적 이동지원 이용자', focus: '장거리 보행 부담이 있는 특정 상황에서 시설 대여 방식으로 이용합니다. 임산부 전체를 휠체어 수요로 가정하지 않습니다.', interface: '큰 버튼 · 간단한 목적지 · 무리 없는 탑승' },
+  { icon: 'wheelchair', priority: '1차 핵심', title: '일상적으로 휠체어를 이용하는 사람', focus: '일상 이동에 휠체어가 필요하고 복잡한 보도 판단과 지속적인 조작 부담을 줄이고자 하는 이용자입니다.', interface: '목적지 선택, 자동 이동, 정지와 수동 전환' },
+  { icon: 'person', priority: '2차 대상', title: '보행 능력이 저하된 고령자', focus: '짧은 거리는 걸을 수 있지만 장거리 보행이나 균형 유지가 어려울 때 필요한 구간에서 이용합니다.', interface: '큰 글씨, 단순 메뉴와 저속 설정' },
+  { icon: 'person', priority: '2차 대상', title: '부상 또는 수술 후 회복자', focus: '회복 기간 동안 보행이 제한될 때 병원과 재활시설 주변에서 단기 이동 지원을 이용합니다.', interface: '정지 버튼, 탑승 안내와 부드러운 주행' },
+  { icon: 'accessibility', priority: '확장 대상', title: '복합 접근성 요구가 있는 이용자', focus: '보행장애와 시각 또는 상지 조작 제약이 함께 있는 경우 입력과 상태 안내 방식을 조정합니다.', interface: '음성, 촉각 버튼과 진동 안내' },
+  { icon: 'temporary', priority: '확장 대상', title: '임산부 등 일시적 이동지원 이용자', focus: '장거리 보행 부담이 있는 특정 상황에서 시설 대여 방식으로 이용합니다. 임산부 전체를 휠체어 수요로 가정하지 않습니다.', interface: '큰 버튼, 간단한 목적지와 무리 없는 탑승' },
 ] as const satisfies readonly SupportProfile[]
 
 export const technologies = [
@@ -91,7 +91,7 @@ export const principles = [
 
 export const impacts = [
   { icon: 'wheelchair', title: '일상 휠체어 이용자', description: '반복적인 방향 조작과 통과 가능성 판단 부담을 줄이고 목적지 중심의 독립 이동을 돕습니다.' },
-  { icon: 'person', title: '2차·확장 이용자', description: '고령자·회복자는 필요한 구간에서 이용하고, 복합 접근성 요구에는 대체 입력을 제공합니다. 일시적 이동지원은 특정 상황의 시설 대여로 제안합니다.' },
-  { icon: 'user', title: '보호자·활동보조인', description: '정상 운행 중 계속 밀거나 조작하는 대신 탑승·하차와 요청된 도움에 집중할 수 있습니다.' },
+  { icon: 'person', title: '2차·확장 이용자', description: '고령자와 회복자는 필요한 구간에서 이용하고, 복합 접근성 요구에는 대체 입력을 제공합니다. 일시적 이동지원은 특정 상황의 시설 대여로 제안합니다.' },
+  { icon: 'user', title: '보호자와 활동보조인', description: '정상 운행 중 계속 밀거나 조작하는 대신 탑승, 하차와 요청된 도움에 집중할 수 있습니다.' },
   { icon: 'institution', title: '시설 운영자', description: '기체 점검, 충전 거점, 접근 가능한 입구와 정차 지점 정보를 일관되게 관리할 수 있습니다.' },
 ] as const satisfies readonly ImpactItem[]

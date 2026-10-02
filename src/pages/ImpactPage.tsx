@@ -8,8 +8,8 @@ export function ImpactPage() {
     <>
       <PageHero
         eyebrow="EXPECTED IMPACT"
-        titleLines={['목적지를 고른 순간부터,', '도착까지 이어지는 이동']}
-        description="기존 휠체어 이용자, 2차·확장 이용자, 보호자·활동보조인과 시설 운영자에게 기대하는 변화를 설명합니다."
+        titleLines={['목적지 선택부터,', '도착까지 이어집니다']}
+        description="사용자, 활동보조인과 시설 운영자에게 기대하는 변화를 목적지 이동 과정으로 설명합니다."
         visual={<ImpactOrbitGraphic />}
         tone="cream"
         variant="impact"

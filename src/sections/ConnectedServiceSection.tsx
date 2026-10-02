@@ -10,7 +10,6 @@ export function ConnectedServiceSection() {
         <RevealOnScroll>
           <SectionHeading
             id="connected-title"
-            eyebrow="ONE WHEELCHAIR SYSTEM"
             titleLines={['기체의 판단과 필요한 정보가', '목적지 이동으로 이어집니다']}
             description="현장의 안전은 기체가 최종 확인하고, 앞 구간의 변화와 접근성 정보는 경로 판단을 보완합니다."
           />
